@@ -28,7 +28,7 @@ export default function BlogPage({data}) {
                 </li>
                 <li>
                     <span>記事タイトル</span>
-                    <meta itemProp="position" content="2" />
+                    <meta itemProp="position" content="3" />
                 </li>
             </ul>
         </div>
