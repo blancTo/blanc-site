@@ -1,18 +1,19 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Seo from '../components/Seo'
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Service from '../components/Service'
-import Works from '../components/Works'
 import ContactParts from '../components/ContactParts'
+import Footer from '../components/Footer'
 
-export default function index() {
+export default function index({data}) {
   return (
     <>
+
     <Header />
+
     <div id='mainimage'>
       <h1>ホームページ作成<br className='smp' />88,000円から</h1>
       <p className='txt140p'>スマホ・常時SSL・ワードプレスにも対応</p>
@@ -45,12 +46,28 @@ export default function index() {
           </div>
           <div className='about_r'><StaticImage src='../images/about_img.png' loading="lazy" alt='' /></div>
         </div>
+
       </div>
     </section>
 
     <Service />
           
-    <Works />
+    <section id="works">
+      <div className='main-content'>
+        <p className='sub-title'><span>Works</span> 製作実績</p>
+        <div className='flex-wrap'>
+          {data.portfolio.edges.map(({ node }) => (
+            <>
+              <div className='works_box'>
+              <a href={'/portfolio/' + node.portfolioId + '/'}><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></a>
+                <p><a href={'/portfolio/' + node.portfolioId + '/'}>{node.title}</a></p>
+              </div>
+            </>
+          ))}
+        </div>
+        <p className='center'><Link to="/portfolio/" className='bt01'>もっと見る</Link></p>
+      </div>
+    </section>
           
     <section id="news">
       <div className='main-content'>
@@ -58,67 +75,14 @@ export default function index() {
         <h3 className='sub-title'>Information</h3>
 
         <div className="flex-wrap mb60">
-          <div className="news_box">
-            <div className="news_img">
-              <a href="https://www.blanc.to/blog/infomation/winter2022/"><img src="/images/blog/eyecatch_01.jpg" alt="冬季休業のお知らせ" loading="lazy" /></a>
-            </div>
-            <div className="news_txt">
-              <p className="kiji_ttl">
-                <a href="https://www.blanc.to/blog/infomation/winter2022/">冬季休業のお知らせ</a>
-              </p>
-            </div>
-          </div>
-          <div className="news_box">
-            <div className="news_img">
-              <a href="https://www.blanc.to/blog/domain/404" aria-label="404ページを設定"><img src="/images/blog/Notfound-1.png" alt="" decoding="async" width={382} height={139} loading="lazy" /></a>
-            </div>
-            <div className="news_txt">
-              <p className="kiji_ttl">
-                <a href="https://www.blanc.to/blog/domain/404">404ページを設定してカスタマイズも忘れずに</a>
-              </p>
-            </div>
-          </div>
-          <div className="news_box">
-            <div className="news_img">
-              <a href="https://www.blanc.to/blog/domain/move-the-https"><img src="/images/blog/2021-08-17_17h45_15.png" alt="さくらサーバーで稼働中のhttpsサイトをエックスサーバーに移設する。" loading="lazy" /></a>
-            </div>
-            <div className="news_txt">
-              <p className="kiji_ttl">
-                <a href="https://www.blanc.to/blog/domain/move-the-https">さくらサーバーで稼働中のhttpsサイトをエックスサーバーに移設する。</a>
-              </p>
-            </div>
-          </div>
-          <div className="news_box">
-            <div className="news_img">
-              <a href="https://www.blanc.to/blog/domain/php-change"><img src="/images/blog/2021-08-27_11h42_08.png" alt="Bizメール＆ウェブでワードプレスがYour server is running PHP version 5.3.3 but WordPress 5.3.2 requires at least 5.6.20. と表示されサイトが表示されなくなった場合。" loading="lazy" /></a>
-            </div>
-            <div className="news_txt">
-              <p className="kiji_ttl">
-                <a href="https://www.blanc.to/blog/domain/php-change">Bizメール＆ウェブでワードプレスがYour server is running PHP version 5.3.3 but WordPress 5.3.2 requires at least 5.6.20. と表示されサイトが表示されなくなった場合。</a>
-              </p>
-            </div>
-          </div>
-          <div className="news_box">
-            <div className="news_img">
-              <a href="https://www.blanc.to/blog/homepage/reload"><img src="/images/blog/2021-09-01_17h44_50.png" alt="ページの再読み込み（リロード）" /></a>
-            </div>
-            <div className="news_txt">
-              <p className="kiji_ttl">
-                <a href="https://www.blanc.to/blog/homepage/reload">ページの再読み込み（リロード）</a>
-              </p>
-            </div>
-          </div>
-          <div className="news_box">
-            <div className="news_img">
-              <a href="https://www.blanc.to/blog/wordpress/phpmyadminwordpress" aria-label="phpMyAdminのパスワードを忘れてしまった時"><img width={481} height={319} src="/images/blog/a0001_014253.jpg" alt="" decoding="async" loading="lazy" /></a>
-            </div>
-            <div className="news_txt">
-              <p className="kiji_ttl">
-                <a href="https://www.blanc.to/blog/wordpress/phpmyadminwordpress">phpMyAdminのパスワードを忘れてしまった時（WordPress版）</a>
-              </p>
-            </div>
-          </div>
-          
+          {data.blog.edges.map(({ node }) => (
+            <>
+              <div className="news_box">
+                <div className="news_img"><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></div>
+                <div className="news_txt"><a href={node.category.slug + '/' + node.blogId + '/'}>{node.title}</a></div>
+              </div>
+            </>
+          ))}
         </div>        
 
         <p className="center mtb20"><Link to="/blog/" className="bt01">もっと見る</Link></p>
@@ -196,3 +160,40 @@ export const Head = () => (
     <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>    
   </>
 )
+
+export const query = graphql`
+query {
+
+  blog: allMicrocmsBlog(limit: 10, sort: {date: DESC}) {
+    edges {
+      node {
+        title
+        blogId
+        date(formatString: "YYYY年MM月DD日")
+        category {
+          slug
+          id
+        }
+        body
+        eyecatch {
+          url
+        }
+      }
+    }
+  }
+
+  portfolio: allMicrocmsPortfolio(limit: 8, sort: {date: DESC}) {
+    edges {
+      node {
+        eyecatch {
+          url
+        }
+        title
+        date(formatString: "YYYY年MM月DD日")
+        portfolioId
+      }
+    }
+  }
+
+}
+`

@@ -111,12 +111,6 @@ header {
             .logobox {
                 width: 12%; display: flex; flex-wrap: wrap; align-items: center; box-sizing: border-box;
                 position: relative; z-index: 10000;
-                @media screen and (min-width:1281px){
-                    width: 25%;
-                }
-                @media screen and (max-width:1280px){
-                    width: 20%;
-                }
                 @media screen and (max-width:1024px){
                     width: 150px;
                     padding-left: 3%;
@@ -166,14 +160,7 @@ header {
                 }
             }
         .telbox {
-            width: 18%;
             text-align: center;
-            @media screen and (min-width:1281px){
-                width: 25%;
-            }
-            @media screen and (max-width:1280px){
-                width: 25%;
-            }
             p { margin: 0;}
             .teltxt_t { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: 700; }
             .tel {
@@ -679,7 +666,12 @@ footer {
         }
          h3 { margin:0!important;}
     }
-    .service_inner { padding: 15px; }
+    .service_inner {
+        padding: 15px;
+        p {
+            margin: 15px 0;
+        }
+    }
     .service01 {
         width : calc(100% / 3) ; background-color: #edffdb;
         @media screen and (max-width:768px){

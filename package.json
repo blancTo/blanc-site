@@ -16,21 +16,9 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "gatsby": "^5.9.0",
-    "gatsby-plugin-canonical-urls": "^5.9.0",
-    "gatsby-plugin-google-gtag": "^5.9.0",
-    "gatsby-plugin-google-tagmanager": "^5.9.0",
-    "gatsby-plugin-htaccess": "^1.4.0",
-    "gatsby-plugin-image": "^3.9.0",
-    "gatsby-plugin-robots-txt": "^1.8.0",
-    "gatsby-plugin-sass": "^6.9.0",
-    "gatsby-plugin-sitemap": "^6.9.0",
-    "gatsby-source-filesystem": "^5.9.0",
-    "gatsby-transformer-sharp": "^5.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.62.1",
-    "swiper": "^9.2.4"
+    "swiper": "^9.3.1"
   },
   "repository": {
     "type": "git",
@@ -38,5 +26,22 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "gatsby": "^5.9.1",
+    "gatsby-plugin-canonical-urls": "^5.9.0",
+    "gatsby-plugin-google-gtag": "^5.9.0",
+    "gatsby-plugin-google-tagmanager": "^5.9.0",
+    "gatsby-plugin-htaccess": "^1.4.0",
+    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
+    "gatsby-plugin-sass": "^6.9.0",
+    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-sitemap": "^6.9.0",
+    "gatsby-source-filesystem": "^5.9.0",
+    "gatsby-source-microcms": "^3.0.0",
+    "gatsby-transformer-sharp": "^5.9.0",
+    "sass": "^1.62.1"
   }
 }

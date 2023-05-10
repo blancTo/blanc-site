@@ -7,6 +7,11 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。",
@@ -19,9 +24,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,13 +33,30 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
           quality: 75, //デフォルトは50
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: process.env.API_KEY,
+        serviceId: 'blanc-site',
+        apis: [
+          {
+            endpoint: 'portfolio',
+          },
+          {
+            endpoint: 'category',
+          },
+          {
+            endpoint: "blog",
+          },
+        ],
       },
     },
     
@@ -88,6 +109,5 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-sass`,
   ],
 }
