@@ -13,7 +13,7 @@ const Header = () => {
             <nav className='pc'>
                 <ul>
                   <li><Link to="/">ホーム</Link></li>
-                  <li><Link to="/works/">制作実績</Link></li>
+                  <li><Link to="/portfolio/">制作実績</Link></li>
                   <li><Link to="/price/">料金表</Link></li>
                   <li><Link to="/company/">会社概要</Link></li>
                   <li><Link to="/contact/">お問い合わせ</Link></li>
@@ -48,7 +48,7 @@ const Header = () => {
 
                 <ul className="gnav__menu">
                   <li className="gnav__menu__item"><Link to="/">ホーム</Link></li>
-                  <li className="gnav__menu__item"><Link to="/works/">制作実績</Link></li>
+                  <li className="gnav__menu__item"><Link to="/portfolio/">制作実績</Link></li>
                   <li className="gnav__menu__item"><Link to="/price/">料金表</Link></li>
                   <li className="gnav__menu__item"><Link to="/company/">会社概要</Link></li>
                   <li className="gnav__menu__item"><Link to="/contact/">お問い合わせ</Link></li>

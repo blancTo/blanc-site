@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql } from "gatsby"
+import { graphql,Link } from "gatsby"
 
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
@@ -22,19 +22,22 @@ export default function BlogPage({data}) {
                     </a>
                     <meta itemProp="position" content="1" />
                 </li>
-                <li>
-                    <span>ブログ</span>
+                <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
+                    <Link to="/blog/" itemProp="item">
+                        <span itemProp="name">ブログ</span>
+                    </Link>
                     <meta itemProp="position" content="2" />
                 </li>
-                <li>
-                    <span>{data.microcmsBlog.title}</span>
+                <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
+                <span itemProp="name">{data.microcmsBlog.title}</span>
                     <meta itemProp="position" content="3" />
                 </li>
             </ul>
         </div>
         <Layout>
 
-            <h3>{data.microcmsBlog.title}</h3>
+            <h2 className='title'>{data.microcmsBlog.title}<br />
+            <span className='date'>更新日：{data.microcmsBlog.updatedAt}</span></h2>
 
             <div className="post_img"><img src={data.microcmsBlog.eyecatch.url} alt="" /></div>
 
@@ -43,6 +46,8 @@ export default function BlogPage({data}) {
                     __html: `${data.microcmsBlog.body}`,
                 }}
             />
+
+            <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
 
         </Layout>
     </>
@@ -60,7 +65,8 @@ query($id: String) {
     microcmsBlog(id: {eq: $id}) {
         blogId
         title
-        date(formatString: "YYYY年MM月DD日")        
+        date(formatString: "YYYY年MM月DD日")
+        updatedAt(formatString: "YYYY年MM月DD日")
         body
         eyecatch {
             url

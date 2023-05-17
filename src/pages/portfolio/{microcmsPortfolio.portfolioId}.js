@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql } from "gatsby"
+import { graphql,Link } from "gatsby"
 
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
@@ -23,12 +23,14 @@ export default function PortfolioPage({data}) {
                     <meta itemProp="position" content="1" />
                 </li>
                 <li>
-                    <span>制作実績</span>
+                    <Link to="/portfolio/" itemProp="item">
+                        <span>制作実績</span>
+                    </Link>
                     <meta itemProp="position" content="2" />
                 </li>
                 <li>
                     <span>{data.microcmsPortfolio.title}</span>
-                    <meta itemProp="position" content="2" />
+                    <meta itemProp="position" content="3" />
                 </li>
             </ul>
         </div>
@@ -37,7 +39,27 @@ export default function PortfolioPage({data}) {
             <h3>{data.microcmsPortfolio.title}</h3>
 
             <div className="post_img"><img src={data.microcmsPortfolio.eyecatch.url} alt="" /></div>
+
+            <table className="client">
+                <tr>
+                    <th>クライアント</th>
+                    <td dangerouslySetInnerHTML={{
+                    __html: `${data.microcmsPortfolio.client}`,
+                    }}/>
+                </tr>
+                <tr>
+                    <th>構成</th>
+                    <td>{data.microcmsPortfolio.config}</td>
+                </tr>
+                <tr>
+                    <th>URL</th>
+                    <td><a href={data.microcmsPortfolio.urlSite}>{data.microcmsPortfolio.urlSite}</a></td>
+                </tr>
+            </table>
+
+            <Link to="/portfolio/" className='bt01'>前のページに戻る</Link>
             
+
 
         </Layout>
     </>
@@ -56,6 +78,9 @@ query($id: String) {
         portfolioId
         title
         date(formatString: "YYYY年MM月DD日")
+        client
+        config
+        urlSite
         eyecatch {
             url
         }
