@@ -5,8 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Header = () => {
   return (
     <>
-      <header>
-        <div id='banner'>
+      <header id='banner'>
           <div id='banner-inner'>
             <div className='logobox'><Link to="/"><StaticImage src="../images/logo.svg" width={225} height={50} alt="blanc" loading="lazy" /></Link></div>
 
@@ -74,9 +73,9 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="smp_nav_box ssl">
-                  <Link to="/recommendation-ssl/" className="flex-wrap">
-                        <div className='smp_nav_img'><img src='/images/service_img04.png' loading="lazy" alt="常時SSL化設定" /></div>
-                        <div className='smp_nav_txt'>常時SSL化設定のススメ</div>
+                    <Link to="/recommendation-ssl/" className="flex-wrap">
+                      <div className='smp_nav_img'><img src='/images/service_img04.png' loading="lazy" alt="常時SSL化設定" /></div>
+                      <div className='smp_nav_txt'>常時SSL化設定のススメ</div>
                     </Link>
                   </div>
                 </div>
@@ -86,7 +85,6 @@ const Header = () => {
             </div>
 
           </div>
-        </div>
       </header>
     </>
   )

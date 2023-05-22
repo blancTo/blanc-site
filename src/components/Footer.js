@@ -15,7 +15,7 @@ const Footer = () => {
                     <li><Link to="/company/">会社概要</Link></li>
                     <li><Link to="/faq/">よくあるご質問</Link></li>
                 </ul>
-                <address>Copyright &copy; blanc All Rights Reserved.</address>
+                <p className="copyright">Copyright &copy; blanc All Rights Reserved.</p>
             </div>
         </footer>
     </>
