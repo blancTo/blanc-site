@@ -15,7 +15,7 @@ const Header = () => {
                   <li><Link to="/portfolio/">制作実績</Link></li>
                   <li><Link to="/price/">料金表</Link></li>
                   <li><Link to="/company/">会社概要</Link></li>
-                  <li><Link to="/contact/">お問い合わせ</Link></li>
+                  <li><Link to="/toiawase/">お問い合わせ</Link></li>
                 </ul>
               </nav>
             
@@ -35,7 +35,7 @@ const Header = () => {
 
               <ul className='h_tool'>
                 <li><Link to='tel:0120-781-437'><img src='/images/h_tel.png' loading="lazy" alt='' /></Link></li>
-                <li><Link to='/contact/'><img src='/images/h_mail.png' loading="lazy" alt='' /></Link></li>
+                <li><Link to='/toiawase/'><img src='/images/h_mail.png' loading="lazy" alt='' /></Link></li>
               </ul>
 
               <input type="checkbox" id="overlay-input" />
@@ -50,7 +50,7 @@ const Header = () => {
                   <li className="gnav__menu__item"><Link to="/portfolio/">制作実績</Link></li>
                   <li className="gnav__menu__item"><Link to="/price/">料金表</Link></li>
                   <li className="gnav__menu__item"><Link to="/company/">会社概要</Link></li>
-                  <li className="gnav__menu__item"><Link to="/contact/">お問い合わせ</Link></li>
+                  <li className="gnav__menu__item"><Link to="/toiawase/">お問い合わせ</Link></li>
                 </ul>
 
                 <div className="smp_nav_cont">

@@ -19,7 +19,7 @@ export default function ContactParts() {
             </p>
             
             <p>受付時間　平日 9：00～18：00</p>
-            <p><Link to="/contact/"><img src="/images/contact_bt.png" width={700} alt="お問い合わせはこちら" loading="lazy" /></Link></p>
+            <p><Link to="/toiawase/"><img src="/images/contact_bt.png" width={700} alt="お問い合わせはこちら" loading="lazy" /></Link></p>
             
         </div>
     </section>

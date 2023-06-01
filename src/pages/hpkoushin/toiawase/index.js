@@ -21,7 +21,7 @@ export default function index() {
                     <meta itemProp="position" content="1" />
                 </li>
                 <li>
-                    <a href="https://www.blanc.to" itemProp="item">
+                    <a href="https://www.blanc.to/hpkoushin/" itemProp="item">
                         <span>ホームページ修正・更新</span>
                     </a>
                     <meta itemProp="position" content="2" />

@@ -11,7 +11,7 @@ const Footer = () => {
                     <li><Link to="/">ホーム</Link></li>
                     <li><Link to="/works/">制作実績</Link></li>
                     <li><Link to="/price/">ホームページ修正・保守料金表</Link></li>
-                    <li><Link to="/contact/">お問い合わせ</Link></li>
+                    <li><Link to="/toiawase/">お問い合わせ</Link></li>
                     <li><Link to="/company/">会社概要</Link></li>
                     <li><Link to="/faq/">よくあるご質問</Link></li>
                 </ul>

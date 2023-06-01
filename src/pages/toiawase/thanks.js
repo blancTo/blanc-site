@@ -20,7 +20,7 @@ export default function thanks() {
                         <meta itemProp="position" content="1" />
                     </li>
                     <li>
-                        <a href="https://www.blanc.to/contact/" itemProp="item">
+                        <a href="https://www.blanc.to/toiawase/" itemProp="item">
                             <span>お問い合わせ</span>
                         </a>
                         <meta itemProp="position" content="2" />

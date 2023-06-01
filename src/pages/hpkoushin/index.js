@@ -156,7 +156,7 @@ export default function index() {
       <h3>お問い合わせはこちら</h3>
 
       <p className="center"><img src="/images/img_call.png" alt="" /></p>
-      <p className="center"><Link to="/hpkoushin/contact/"><img src="/images/contact_bt.png" alt="メールでのお申し込みはこちら" width={760} height={114} /></Link></p>
+      <p className="center"><Link to="/hpkoushin/toiawase/"><img src="/images/contact_bt.png" alt="メールでのお申し込みはこちら" width={760} height={114} /></Link></p>
 
     </Layout>
       

@@ -40,7 +40,7 @@ export default function faq() {
                 <p>また作成に必要な原稿のご準備など、ご不明な点がございましたらお気軽にお問い合せ下さい。</p>
                 <p className="center"><a href="tel:0120-781-437" aria-label="電話でお問い合わせ">0120-781-437</a></p>
                 <p>メールでのお問い合せはこちら</p>
-                <p><Link to="/contact/">https://www.blanc.to/contact/</Link></p>
+                <p><Link to="/toiawase/">https://www.blanc.to/toiawase/</Link></p>
             </div>
 
             <h3>Ｑ．直接面談しなくてもホームページ作成に支障はないですか？</h3>

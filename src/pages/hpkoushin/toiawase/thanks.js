@@ -30,7 +30,7 @@ export default function thanks() {
                     <meta itemProp="position" content="2" />
                 </li>
                 <li>
-                    <Link to="/hpkoushin/contact/" itemProp="item">
+                    <Link to="/hpkoushin/toiawase/" itemProp="item">
                         <span>ホームページ更新・修正サポートのお問い合わせ</span>
                     </Link>
                     <meta itemProp="position" content="3" />
