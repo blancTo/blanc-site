@@ -46,7 +46,7 @@ export default function index({data}) {
 }
 export const Head = ({data}) => (
     <>
-        <Seo title={data.allMicrocmsBlog.title} />
+        <Seo title="Blog" />
     </>
 )
 

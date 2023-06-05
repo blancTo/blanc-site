@@ -42,12 +42,6 @@ export default function PortfolioPage({data}) {
 
             <table className="client">
                 <tr>
-                    <th>クライアント</th>
-                    <td dangerouslySetInnerHTML={{
-                    __html: `${data.microcmsPortfolio.client}`,
-                    }}/>
-                </tr>
-                <tr>
                     <th>構成</th>
                     <td>{data.microcmsPortfolio.config}</td>
                 </tr>
@@ -57,7 +51,7 @@ export default function PortfolioPage({data}) {
                 </tr>
             </table>
 
-            <Link to="/portfolio/" className='bt01'>前のページに戻る</Link>
+            <p className='center'><Link to="/portfolio/" className='bt01'>前のページに戻る</Link></p>
             
 
 
@@ -77,8 +71,7 @@ query($id: String) {
     microcmsPortfolio(id: {eq: $id}) {
         portfolioId
         title
-        date(formatString: "YYYY年MM月DD日")
-        client
+        date(formatString: "YYYY年MM月DD日")        
         config
         urlSite
         eyecatch {

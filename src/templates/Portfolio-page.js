@@ -26,23 +26,21 @@ export default function BlogPage({data}) {
                     <span>制作実績</span>
                     <meta itemProp="position" content="2" />
                 </li>
-                <li>
-                    <span>記事タイトル</span>
-                    <meta itemProp="position" content="3" />
-                </li>
             </ul>
         </div>
         <Layout>
             <h2 className="page_title01 mt0">制作実績</h2>                
             
-                {data.allMicrocmsPortfolio.edges.map(({ node }) => (
-            
-                    <div className="kiji_thumb">
-                    <a href={'/portfolio/' + node.portfolioId + '/'}><img src={node.eyecatch.url} alt={node.title + 'サムネイル画像'} /></a>
-                    </div>
-                    
-            
-                ))}            
+            <div className='flex-wrap'>
+        {data.allMicrocmsPortfolio.edges.map(({ node }) => (
+            <>
+              <div className='works_box'>
+              <a href={'/portfolio/' + node.portfolioId + '/'} className="works_img"><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></a>
+                <p><a href={'/portfolio/' + node.portfolioId + '/'}>{node.title}</a></p>
+              </div>
+            </>
+          ))}
+        </div>        
             
       </Layout>
     </>

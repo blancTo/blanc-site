@@ -48,23 +48,23 @@ export default function index({data}) {
 
 export const Head = ({data}) => (
     <>
-        <Seo title={data.allMicrocmsPortfolio.title} />
+        <Seo title="制作実績" />
     </>
 )
 
 export const query = graphql`
 query {
-    allMicrocmsPortfolio {        
-        edges {
-            node {
-              title
-              portfolioId
-              date(formatString: "YYYY年MM月DD日")               
-              eyecatch {
-                url
-            }
-            }
-          }
+  allMicrocmsPortfolio(sort: {date: DESC}) { 
+    edges {
+      node {
+        title
+        portfolioId
+        date(formatString: "YYYY年MM月DD日")               
+        eyecatch {
+          url
+        }
+      }
     }
+  }
 }
 `

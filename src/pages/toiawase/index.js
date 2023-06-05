@@ -58,10 +58,6 @@ export default function index() {
                     <td><input type="tel" data-type="tel" name="電話番号" size="30" /></td>
                 </tr>
                 <tr>
-                    <th>URL</th>
-                    <td><input type="url" data-type="url" name="URL" size="60" /></td>
-                </tr>
-                <tr>
                     <th>お問い合わせ内容</th>
                     <td><textarea name="お問い合わせ内容" rows="10" cols="10"></textarea></td>
                 </tr>
@@ -77,7 +73,7 @@ export default function index() {
 }
 
 const jsonN = "ホームページ修正・管理のご依頼は有限会社blanc",
-jsonS = "contact",
+jsonS = "toiawase",
 jsonD = "地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。";
 
 

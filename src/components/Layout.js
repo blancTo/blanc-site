@@ -6,18 +6,14 @@ import Contact from './ContactParts'
 export default function Layout({ children }) {
   return (
     <>
-    <div id='content'>
-        <div className='maincontent'>
-            
-            <section id='subpage'>
-                <div className='main-content'>
-                    { children }
-                </div>
-            </section>
-            <Contact />
-            <Footer />
-        </div>
-    </div>
+    <article id='subpage'>
+      <div className='main-content'>
+          { children }
+      </div>
+    </article>
+    <Contact />
+    <Footer />
+        
     </>
   )
 }

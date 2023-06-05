@@ -20,6 +20,7 @@ export default function index({data}) {
       <Link to="/renewal/" className='bt'>詳しく見る</Link>
     </div>
     
+    <main role="main">
     <section id='aboutus'>
       <div className='main-content'>
                 
@@ -92,6 +93,8 @@ export default function index({data}) {
 
     <ContactParts />
 
+    </main>
+    
     <Footer />
 
     </>

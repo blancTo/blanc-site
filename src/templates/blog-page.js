@@ -26,30 +26,22 @@ export default function BlogPage({data}) {
                     <span>ブログ</span>
                     <meta itemProp="position" content="2" />
                 </li>
-                <li>
-                    <span>記事タイトル</span>
-                    <meta itemProp="position" content="2" />
-                </li>
             </ul>
         </div>
         <Layout>
-            <h2 className="page_title01 mt0">ブログ</h2>                
-            <div className="kiji_list">
-                {data.allMicrocmsBlog.edges.map(({ node }) => (
-                <div className="kiji_box">
-                    <div className="kiji_thumb">
-                    <a href={'/blog/' + node.blogId + '/'}><img src={node.eyecatch.url} alt={node.title + 'サムネイル画像'} /></a>
-                    </div>
-                    <div className="kiji_txt">					
-                    <p className="txt12">{node.date}</p>
-                    <p><a href={'/blog/' + node.blogId}>{node.title}</a></p>                    
-                    
-                    </div>
-                </div>
-                ))}
-            </div>
-            
-      </Layout>
+          <h2 className="page_title01 mt0">ブログ</h2>
+          
+          <div className="flex-wrap mb60">
+            {data.allMicrocmsBlog.edges.map(({ node }) => (
+            <>
+              <div className="news_box">
+                <div className="news_img"><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></div>
+                <div className="news_txt"><a href={'/blog/' + node.blogId + '/'}>{node.title}</a></div>
+              </div>
+            </>
+            ))}
+          </div>            
+        </Layout>
     </>
   )
 }

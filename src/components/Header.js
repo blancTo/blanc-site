@@ -5,9 +5,9 @@ import { StaticImage } from "gatsby-plugin-image"
 const Header = () => {
   return (
     <>
-      <header id='banner'>
-          <div id='banner-inner'>
-            <div className='logobox'><Link to="/"><StaticImage src="../images/logo.svg" width={225} height={50} alt="blanc" loading="lazy" /></Link></div>
+      <header id='header'>
+          <div id='header-inner'>
+            <div className='logobox'><Link to="/"><img src="/images/logo.svg" width={225} height={50} alt="blanc" loading="lazy" /></Link></div>
 
             <nav className='pc'>
                 <ul>
