@@ -43,7 +43,7 @@ export default function Works() {
             </div>            
           </div>
 			    
-				  <p className='center'><Link to="/works/" className='bt01'>もっと見る</Link></p>
+				  <p className='center'><Link to="/portfolio/" className='bt01'>もっと見る</Link></p>
 				  
 			  </div>
 		  </section>

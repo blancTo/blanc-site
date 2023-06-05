@@ -9,7 +9,7 @@ const Footer = () => {
                 <p className='center'><Link to="/"><img src="/images/logo.svg" width={225} height={50} alt="blanc" loading="lazy" /></Link></p>
                 <ul className='foot_link'>
                     <li><Link to="/">ホーム</Link></li>
-                    <li><Link to="/works/">制作実績</Link></li>
+                    <li><Link to="/portfolio/">制作実績</Link></li>
                     <li><Link to="/price/">ホームページ修正・保守料金表</Link></li>
                     <li><Link to="/toiawase/">お問い合わせ</Link></li>
                     <li><Link to="/company/">会社概要</Link></li>
