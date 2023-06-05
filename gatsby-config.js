@@ -87,7 +87,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingIds: ["UA-3373199-1"],
+        trackingIds: ["G-8NELV8F9BR"],
         pluginConfig: {
           head: true,
         },
