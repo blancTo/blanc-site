@@ -29,7 +29,7 @@ export default function index() {
 
         <h3>お問い合わせフォーム</h3>
         
-        <p className="center">お問い合わせは、こちらのメールフォームよりお気軽にご相談下さい。<br />
+        <p>お問い合わせは、こちらのメールフォームよりお気軽にご相談下さい。<br />
         なお、折り返しご連絡させていただく際に必要になりますので、メールアドレスはお間違えになりませんようご注意下さい。</p>
         
         <p>英数字は全て半角でご入力ください。</p>
@@ -42,7 +42,7 @@ export default function index() {
 
             <table className="form">
                 <tr>
-                    <th>お名前<span className="must">必須</span></th>
+                    <th><span className="must">必須</span>お名前</th>
                     <td><input type="text" name="お名前" size="45" required="required" /></td>
                 </tr>
                 <tr>
@@ -50,7 +50,7 @@ export default function index() {
                     <td><input type="text" name="会社名" size="45" /></td>
                 </tr>
                 <tr>
-                    <th>メールアドレス<span className="must">必須</span></th>
+                    <th><span className="must">必須</span>メールアドレス</th>
                     <td><input type="email" data-type="email" name="email" size="60" required="required" /></td>
                 </tr>
                 <tr>

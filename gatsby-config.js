@@ -91,6 +91,9 @@ module.exports = {
         pluginConfig: {
           head: true,
         },
+        gtagConfig: {
+          send_page_view: true,
+        },
       },
     },
     {
