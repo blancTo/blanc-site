@@ -178,16 +178,17 @@ a:hover img { filter: alpha(opacity=60); opacity: 0.6; }
         p { margin: 0;}
         .teltxt_t { font-size: 1.4rem; font-weight: 700; }
         .tel {
+            line-height: 1.2;
             svg {
                 width: 40px; margin-right: 5px; fill: #22ac38;
             }
             a {
                 font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+                Arial,
+                "Hiragino Kaku Gothic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
                 font-size: 3.6rem;
                 color: #cc0000;
                 font-weight: 900;
