@@ -23,7 +23,7 @@ html, body {
     font-weight: 400;
 }
 
-div, span, object, iframe, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:1.6rem; vertical-align:baseline; background:transparent;}
+div, span, object, iframe, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:1.6rem; vertical-align:baseline; background:transparent;}
 
 input {
     &[type=text], &[type=tel], &[type=email], &[type=url] {
@@ -54,8 +54,6 @@ select {
     max-width: 100%;
 }
   
-
-  
 table {
     width: 100%;
     table-layout: fixed;
@@ -73,6 +71,7 @@ img { border-style:none; padding:0px; max-width:100%; height: auto; transition: 
 a:hover img { filter: alpha(opacity=60); opacity: 0.6; }
 
 .center { text-align: center; }
+.bold { font-weight: 900; }
 
 .pc{
     @media screen and (max-width:1024px){
@@ -198,7 +197,7 @@ a:hover img { filter: alpha(opacity=60); opacity: 0.6; }
                 }
             }
         }
-        .teltxt_b { font-size: 1.2px; font-weight: 700;}
+        .teltxt_b { font-size: 1.2rem; font-weight: 700;}
     }
 }
 
@@ -349,7 +348,7 @@ header input[type=checkbox]:checked ~ #overlay-button span:after {
         text-align: center;
         color: #000;
         background-color: #fff;;
-        font-size: 1.2px;
+        font-size: 1.2rem;
         padding: 5%;
         text-decoration: none;
         transition: .3s;
@@ -396,8 +395,10 @@ footer {
                     justify-content: center;
                     align-items: center;
                     box-sizing: border-box;
-                    font-size: 1.2px;
-                    
+                    font-size: 1.2rem;          
+                }
+                @media screen and (max-width: 375px) {
+                    font-size: 1rem;
                 }
                 &:nth-child(odd):after { 
                     @media screen and (max-width: 1024px) {content: "｜"; color: #000; }
@@ -430,6 +431,7 @@ footer {
         .copyright {
             font-style: normal;
             text-align: center;
+            margin: 0;
             @media screen and (max-width: 480px) {
                 font-size: 1.2rem;
             }
@@ -552,17 +554,17 @@ footer {
     @media screen and (max-width: 1280px) {
         background-size: 25% auto,45% auto;
     }
+    @media screen and (max-width:900px){
+        height: 250px;
+        margin-top: 60px;
+    }
     @media screen and (max-width: 768px) {
         height: 200px;
         background-size: 35% auto,50% auto;
-
-    }
-    @media screen and (max-width:900px){
-        height: 250px;
-    }
+    }    
     h1 {
         @media screen and (max-width: 768px) {
-            font-size: 4rem;
+            font-size: 2.6rem;
         }
     }
 }
@@ -850,7 +852,7 @@ footer {
         }
       }
 }
-.date { font-size: 1.2px;  font-weight: 400; color: #000;}
+.date { font-size: 1.2rem;  font-weight: 400; color: #000;}
 
 #contact {
     background-image: url("/images/contact_bg.jpg");
@@ -899,6 +901,9 @@ footer {
         .contact_title { font-size: 4rem;
             @media screen and (max-width: 480px) {
                 font-size: 2.6rem;
+            }
+            @media screen and (max-width: 375px) {
+                font-size: 2rem;
             }
         }
         .tel {
@@ -986,7 +991,9 @@ footer {
 .post_img {
     text-align: center;
      img { margin: 0 auto; }
-    }
+}
+
+.koushin_naiyo { width: 100%; background: #eaf5fc; margin: 10px auto; border-radius: 10px; padding: 3%; }
 
 .koushin_cont { display: flex; flex-wrap: wrap; margin: 0 auto;}
 .koushin_box {
@@ -1074,8 +1081,8 @@ footer {
 .txt160p {
     font-size: 160%!important;
 }
-.txt180p {
-    font-size: 180%!important;
+.txt30 {
+    font-size: 3rem!important;
 }
 
 .mtb20 { margin: 20px 0!important;}
@@ -1234,12 +1241,14 @@ footer {
 
 .list02 {
     background-color: #ffffee;
-    padding: 2%;
+    padding: 15px;
     border-radius: 10px;
     border: solid 2px #f9831f;
     margin: 3% 0;
-    li { 
+    li {
+        padding-left:30px;
         margin-bottom: 20px;
+        .fa-check { margin-left: -25px;}
         &:last-child { margin-bottom: 0;}
         .fa-check { color: #f9831f; font-weight: 900; font-size: 120%;}
     }
@@ -1250,9 +1259,10 @@ footer {
     li {
         background-color: #f3f3f3;
         border-radius: 10px;
-        padding: 2%;
+        padding: 15px 15px 15px 45px;
         margin-bottom: 20px;
         position: relative;
+        .fa-check { margin-left: -25px;}
     }
 }
 
@@ -1260,14 +1270,14 @@ footer {
     margin-top: 2%;
     li {
         background-color: #f3f3f3;
-        padding: 2% 2% 2% 60px;
+        padding: 10px 10px 10px 40px;
         margin-bottom: 15px;
         list-style-type: none;
         border-bottom: #0057b8 solid 5px;
+        text-align: justify;
         .fa-user { margin-left: -30px;}
         @media screen and (max-width: 768px) {
-            font-size: 1.4px;
-            padding: 3% 20px;
+            font-size: 1.4rem;
         }
     }
 }

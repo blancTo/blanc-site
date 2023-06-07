@@ -18,7 +18,7 @@ export default function index() {
 
     <div id="mainimage-sub">
         <h1>ホームページ修正・更新</h1>
-        <p>HPkoushin</p>
+        <p>Web site updates</p>
     </div>
     <div id="breadcrumb">
         <ul itemType="https://schema.org/BreadcrumbList">
@@ -37,7 +37,7 @@ export default function index() {
 
     <Layout>
 
-      <h2 className="mt0">ホームページ修正・更新代行<br />～他社制作サイトもOK～</h2>
+      <h2 className="mt0 center">ホームページ修正・更新代行 ～他社制作サイトもOK～</h2>
       
       <div className="list03">
         <ul>
@@ -47,78 +47,85 @@ export default function index() {
             <li><FontAwesomeIcon icon={faCheck} />ホームページを作ってもらった人に連絡がとれない。</li>
         </ul>
       </div>
+
       <h3>そんなお悩みをお持ちの方へ。</h3>
+
       <h4>ホームページの情報古くなっていませんか？</h4>
-      ホームページを見てくれるお客様は古い情報のままだと敏感に感じ取りすぐに去っていってしまします。そのような状況ではせっかく作ったホームページもあまり意味を持ちません。
-      ところが、ホームページを修正しようと思うとこんな問題が発生します。
+
+      <p>ホームページを見てくれるお客様は古い情報のままだと敏感に感じ取りすぐに去っていってしまします。そのような状況ではせっかく作ったホームページもあまり意味を持ちません。
+      ところが、ホームページを修正しようと思うとこんな問題が発生します。</p>
+
       <ul className="list02">
             <li><FontAwesomeIcon icon={faCheck} />画像の加工などが分からない。</li>
             <li><FontAwesomeIcon icon={faCheck} />金額変更しようと思ったらそこだけ変更出来ない。</li>
             <li><FontAwesomeIcon icon={faCheck} />ホームページを作ってもらった人に連絡が取れない。</li>
       </ul>
-      <p style={{margin: '5% 0'}}>そんな時はblancの<span className="bold">ホームページ修正・更新サービスへ！</span>
-        延べ500社以上のホームページ作成や更新に携わってきた実績でちょっとしたホームページの修正作業をお気軽にご依頼頂けます。もちろんワードプレス（wordpress）や楽天ショップなどにも対応可能です。</p>
 
-      <div className="clearfix" style={{width: '100%', background: '#eaf5fc', margin: '10px auto', borderRadius: '10px', textAlign: 'left', lineHeight: '2em'}}>
-        <div style={{padding: '3%'}}>
-            <p className="bold txt180p blue">こんなお悩みなら、blancへお任せください！</p>
+        <h4>そんな時はblancの<strong>ホームページ修正・更新サービスへ！</strong></h4>
+
+      <p className='mtb20'>延べ500社以上のホームページ作成や更新に携わってきた実績でちょっとしたホームページの修正作業をお気軽にご依頼頂けます。もちろんワードプレス（wordpress）や楽天ショップなどにも対応可能です。</p>
+
+        <div className="koushin_naiyo">        
+            <p className="bold txt30 blue">こんなお悩みなら、blancへお任せください！</p>
             <p className="larger bold mar-bot0">基本料金<span className="dark-red">5,500円～</span>でホームページ修正致します。</p>
             <p className="mt0">※テキストの修正は基本料金に含まれています。</p>
-            <p className="txt180p bold">主な作業料金</p>
+            <p className="txt30 bold">主な作業料金</p>
             <div className="koushin_cont">
                 <div className="koushin_box">
                     <div className="bg_01">
                         <p className="txt160p bold center">テキスト修正</p>
                         <p className="txt160p bold center">0円</p>
-                        <p style={{fontSize: '90%'}}>部分的な文章修正作業を行います。</p>
+                        <p>部分的な文章修正作業を行います。</p>
                     </div>
                 </div>
                 <div className="koushin_box">
                     <div className="bg_02">
                         <p className="txt160p bold center">写真差し替え</p>
                         <p className="txt160p bold center">550円</p>
-                        <p style={{fontSize: '90%'}}>掲載中の写真を新しいものに差し替えます。</p>
+                        <p>掲載中の写真を新しいものに差し替えます。</p>
                     </div>
                 </div>
                 <div className="koushin_box">
                     <div className="bg_03">
                         <p className="txt160p bold center">画像の加工</p>
                         <p className="txt160p bold center">2,200円～</p>
-                        <p style={{fontSize: '90%'}}>画像の切抜きや合成などの作業を行います。</p>
+                        <p>画像の切抜きや合成などの作業を行います。</p>
                     </div>
                 </div>
                 <div className="koushin_box">
                     <div className="bg_04">
                         <p className="txt160p bold center">バナー作成</p>
                         <p className="txt160p bold center">3,300円～</p>
-                        <p style={{fontSize: '90%'}}>画像などを加工してバナーを作成します。</p>
+                        <p>画像などを加工してバナーを作成します。</p>
                     </div>
                 </div>
                 <div className="koushin_box">
                     <div className="bg_05">
                         <p className="txt160p bold center">ページの追加</p>
                         <p className="txt160p bold center">8,800円～</p>
-                        <p style={{fontSize: '90%'}}>新しくページを作成します。</p>
+                        <p>新しくページを作成します。</p>
                     </div>
                 </div>
                 <div className="koushin_box">
                     <div className="bg_06">
                         <p className="txt160p bold center">動画設置</p>
                         <p className="txt160p bold center">11,000円～</p>
-                        <p style={{fontSize: '90%'}}>ご用意いただいた動画を設置します。</p>
+                        <p>ご用意いただいた動画を設置します。</p>
                     </div>
                 </div>
                 <div className="koushin_box">
                     <div className="bg_07">
                         <p className="txt160p bold center">フォームの設置</p>
                         <p className="txt160p bold center">11,000円～</p>
-                        <p style={{fontSize: '90%'}}>お問い合わせフォーム等の設置作業を行います。</p>
+                        <p>お問い合わせフォーム等の設置作業を行います。</p>
                     </div>
                 </div>
             </div>
+        
         </div>
-      </div>
+
       <h4>その他のご依頼としては次のような案件も承っております。</h4>
+
       <ul className="list02">
             <li><FontAwesomeIcon icon={faCheck} /><a href="/renewal">ホームページリニューアル</a></li>
             <li><FontAwesomeIcon icon={faCheck} /><a href="/responsive">スマホ対応（レシポンシブ化）</a></li>
@@ -129,7 +136,9 @@ export default function index() {
             <li><FontAwesomeIcon icon={faCheck} />ショッピングカートの設置</li>
             <li><FontAwesomeIcon icon={faCheck} />ワードプレスなどの更新や調整</li>
       </ul>
+
       <h4>お客様の声</h4>
+
       <ul className="list_voice">
             <li><FontAwesomeIcon icon={faUser} />以前頼んでいた方に頼めなくなりホームページが修正出来ずにとても困っていました。<br />
             素早く対応してくださり本当に助かりました。<br />

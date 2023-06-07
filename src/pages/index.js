@@ -79,7 +79,7 @@ export default function index({data}) {
             {data.blog.edges.map(({ node }) => (
               <>
                 <div className="news_box">
-                  <div className="news_img"><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></div>
+                  <div className="news_img"><img src={node.eyecatch.url + '?fm=webp'} width={200} height={133} alt={node.title + 'サムネイル画像'} loading="lazy" /></div>
                   <div className="news_txt"><a href={node.category.slug + '/' + node.blogId + '/'}>{node.title}</a></div>
                 </div>
               </>
