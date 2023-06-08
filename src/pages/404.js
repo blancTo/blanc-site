@@ -16,7 +16,7 @@ export default function NotFound() {
       <Layout>
         <section id="sub-page">
           <div className="main-content">
-            <h2 className="page_title01 mt0">お探しの記事は見つかりませんでした。</h2>
+            <h2 className="page_title01 center mt0">お探しの記事は見つかりませんでした。</h2>
             <p className="center">有限会社blancのWEBサイトをご覧頂きありがとうございます。<br />
             大変申し訳ないのですが、あなたがアクセスしようとしたページは削除されたかURLが変更されています。<br />
             お手数をおかけしますが、以下の方法からもう一度目的のページをお探し下さい。</p>
