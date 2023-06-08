@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
 import Layout from '../../components/Layout'
+import { Pagination } from "../../components/Pagination"
 
 export default function index({data}) {
   return (
@@ -40,29 +41,33 @@ export default function index({data}) {
           ))}
         </div>
 
+        <Pagination totalCount={data.allMicrocmsBlog.totalCount} />
+
         </Layout>
     </>
   )
 }
 export const Head = ({data}) => (
-    <>
-        <Seo title="Blog" />
-    </>
+  <>
+    <body id="pagetop" className="blog-top" />
+    <Seo title="Blog" />
+  </>
 )
 
 export const query = graphql`
 query {
-    allMicrocmsBlog {
-        edges {
-          node {
-            title
-            date(formatString: "YYYY年MM月DD日")
-            eyecatch {
-              url
-            }
-            blogId
-          }
+  allMicrocmsBlog(sort: {date: DESC}, limit: 10, skip: 0) {
+    edges {
+      node {
+        title
+        date(formatString: "YYYY年MM月DD日")
+        eyecatch {
+          url
         }
+        blogId
       }
+    }
+    totalCount
+  }
 }
 `

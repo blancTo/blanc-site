@@ -18,7 +18,7 @@ exports.createPages = ({ actions,graphql  }) => {
         Promise.reject (result.errors);      
     }
 
-    const PerPage = 30
+    const PerPage = 10
     const pageCount = Math.ceil(result.data.allMicrocmsBlog.totalCount / PerPage)
   
     for (let i = 0; i < pageCount; i++) {
@@ -47,7 +47,7 @@ exports.createPages = ({ actions,graphql  }) => {
         Promise.reject (result.errors);      
     }
 
-    const PerPage = 30
+    const PerPage = 16
     const pageCount = Math.ceil(result.data.allMicrocmsPortfolio.totalCount / PerPage)
   
     for (let i = 0; i < pageCount; i++) {

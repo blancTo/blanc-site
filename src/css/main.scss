@@ -995,7 +995,7 @@ footer {
 
 .post_img {
     text-align: center;
-     img { margin: 0 auto; }
+     img { margin: 20px auto; }
 }
 
 .koushin_naiyo { width: 100%; background: #eaf5fc; margin: 10px auto; border-radius: 10px; padding: 3%; }
@@ -1168,36 +1168,37 @@ footer {
     }
   }
 
+.slidetable {
+    @media screen and (max-width: 768px) {
+        width: 100%; overflow: auto; margin-bottom: 20px;
+        table { width: 650px;}
+    }
+}
+
 .price-list {
     border-collapse: separate;
     width: 100%;
     border: 1px solid #ccc;
     margin: 20px 0;
-  
-    th {
-      border-right: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      padding: 13px 15px;
-      text-align: left;
-      background: #e5e5e5;
-      color: #000;
-      font-size: 1.6rem;
-      width: 30%;
-      @media screen and (max-width: 768px) {
-        display: block;
-        width: 100%;
-      }
+    border-spacing: 0;
+    @media screen and (max-width: 768px) {
+        margin: 0 0 20px 0;
     }
-  
+    th {
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 13px 15px;
+        text-align: left;
+        background: #e5e5e5;
+        color: #000;
+        font-size: 1.6rem;
+        width: 20%;      
+    }  
     td {
-      border-right: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      padding: 13px 15px;
-      background: #fff;
-      @media screen and (max-width: 768px) {
-        display: block;
-        width: 100%;
-      }
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 13px 15px;
+        background: #fff;        
     }
 }
 
@@ -1378,3 +1379,13 @@ footer {
 }
 
 .g-recaptcha { display: flex; flex-wrap: wrap; justify-content: center; margin: 40px 0; }
+
+.page-nav { display: flex; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+.page-nav li { padding: 0 10px 10px 0; }
+.page-nav li a { width: 40px; height: 40px; border: solid 2px #9bd7f6; background-color: #9bd7f6; color: #fff; border-radius: 10px; text-decoration: none; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; transition : all 0.3s ease 0s; }
+.page-nav li a[aria-current="page"] { background-color: #2fb3f6; border: solid 2px #2fb3f6; color: #fff; font-weight: 900; }
+.page-nav li a[aria-current="page"]:hover { background-color: #fff; color: #2fb3f6; }
+.page-nav li a:hover { background-color: #fff; color: #2fb3f6; border: solid 2px #2fb3f6; }
+
+.blog-top .page-nav li:first-child a { background-color: #2fb3f6; border: solid 2px #2fb3f6; color: #fff; font-weight: 900; }
+.blog-top .page-nav li:first-child a:hover { background-color: #fff; color: #2fb3f6; border: solid 2px #2fb3f6; }

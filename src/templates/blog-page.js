@@ -5,14 +5,15 @@ import { graphql } from "gatsby"
 import Header from '../components/Header'
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+import { Pagination } from "../components/Pagination"
 
 export default function BlogPage({data}) {
   return (
     <>
       <Header />
         <div id="mainimage-sub">
-            <h1>ホームページ修正・保守料金表</h1>
-            <p>Price</p>
+            <h1>ブログ</h1>
+            <p>Blog</p>
         </div>
         <div id="breadcrumb">
             <ul itemType="https://schema.org/BreadcrumbList">
@@ -40,7 +41,10 @@ export default function BlogPage({data}) {
               </div>
             </>
             ))}
-          </div>            
+          </div>     
+
+          <Pagination totalCount={data.allMicrocmsBlog.totalCount} />
+
         </Layout>
     </>
   )
@@ -56,9 +60,9 @@ export const Head = () => (
 export const query = graphql`
 query ($skip: Int, $limit: Int) {
     allMicrocmsBlog(
-        sort: {date: DESC}
-        limit: $limit,
-        skip: $skip) {
+      sort: {date: DESC}
+      limit: $limit,
+      skip: $skip) {
       totalCount
       edges {
         node {
