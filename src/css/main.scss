@@ -111,7 +111,7 @@ a:hover img { filter: alpha(opacity=60); opacity: 0.6; }
     
     #header-inner {
         width: 100%;
-        padding: 1%;
+        padding: 20px;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
@@ -119,6 +119,10 @@ a:hover img { filter: alpha(opacity=60); opacity: 0.6; }
         align-items: center;
         position: relative;
         background-color: #fff;
+        @media screen and (max-width:1366px){
+            padding: 15px 20px;
+            justify-content: space-between;
+        }
         @media screen and (max-width:1024px){
             justify-content: flex-start;
         }
