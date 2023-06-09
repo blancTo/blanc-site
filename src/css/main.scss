@@ -994,8 +994,10 @@ footer {
 }
 
 .post_img {
+    max-width: 800px;
+    margin-inline: auto;
     text-align: center;
-     img { margin: 20px auto; }
+    img { margin: 20px auto; }
 }
 
 .koushin_naiyo { width: 100%; background: #eaf5fc; margin: 10px auto; border-radius: 10px; padding: 3%; }

@@ -12,7 +12,7 @@ export default function index({data}) {
       <Header />
       <div id="mainimage-sub">
             <h1>ブログ</h1>
-            <p>Blog</p>
+            <p>Information&amp;Blog</p>
         </div>
         <div id="breadcrumb">
             <ul itemType="https://schema.org/BreadcrumbList">

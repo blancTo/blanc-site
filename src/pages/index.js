@@ -66,14 +66,14 @@ export default function index({data}) {
               </>
             ))}
           </div>
-          <p className='center'><Link to="/portfolio/" className='bt01'>もっと見る</Link></p>
+          <p className='center'><Link to="/portfolio/" className='bt01'>製作実績はこちら</Link></p>
         </div>
       </section>
             
       <section id="news">
         <div className='main-content'>
 
-          <h3 className='sub-title'>Information</h3>
+          <h3 className='sub-title'>Information&amp;Blog</h3>
 
           <div className="flex-wrap mb60">
             {data.blog.edges.map(({ node }) => (
@@ -86,7 +86,7 @@ export default function index({data}) {
             ))}
           </div>        
 
-          <p className="center mtb20"><Link to="/blog/" className="bt01">もっと見る</Link></p>
+          <p className="center mtb20"><Link to="/blog/" className="bt01">blogはこちら</Link></p>
 
         </div>
       </section>
