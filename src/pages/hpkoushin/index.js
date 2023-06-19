@@ -262,7 +262,7 @@ const jsonLd = {
 
 export const Head = () => (
     <>
-      <Seo title="ホームページ修正・更新" />
+      <Seo title2="ホームページ修正・更新 | 他社作成HPも対応 - 有限会社blanc" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </>
 )
