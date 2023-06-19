@@ -16,6 +16,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "modern-normalize": "^2.0.0",
     "react": "^18.2.0",
@@ -36,14 +37,14 @@
     "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-google-tagmanager": "^5.9.0",
     "gatsby-plugin-htaccess": "^1.4.0",
-    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sass": "^6.9.0",
-    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.9.0",
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-source-microcms": "^3.0.0",
-    "gatsby-transformer-sharp": "^5.9.0",
+    "gatsby-transformer-sharp": "^5.11.0",
     "sass": "^1.62.1"
   }
 }
