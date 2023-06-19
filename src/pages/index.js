@@ -159,7 +159,11 @@ const jsonLd = {
 
 export const Head = () => (
   <>
-    <Seo />
+    <Seo
+      title2="ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。"
+      keyword="ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ"
+      description="地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。"
+    />
     <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>    
   </>
 )

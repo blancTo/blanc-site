@@ -70,6 +70,8 @@ export default function ResponsiveJirei() {
 
 export const Head = () => (
     <>
-        <Seo title="スマホ対応・レスポンシブ化事例" />
+        <Seo
+            title="スマホ対応・レスポンシブ化事例"
+        />
     </>
 )
