@@ -872,7 +872,10 @@ footer {
         }
       }
 }
-.date { font-size: 1.2rem;  font-weight: 400; color: #000;}
+.date { 
+    font-size: 1.2rem;  font-weight: 400; color: #000;
+    time { font-size: 1.2rem; }
+}
 
 #contact {
     background-image: url("/images/contact_bg.jpg");

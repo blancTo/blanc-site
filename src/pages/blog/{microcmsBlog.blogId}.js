@@ -36,7 +36,7 @@ export default function BlogPage({data}) {
         <Layout>
 
             <h2 className='title'>{data.microcmsBlog.title}<br />
-            <span className='date'>更新日：{data.microcmsBlog.updatedAt}</span></h2>
+            <span className='date'>更新日：<time dateTime={data.microcmsBlog.createdAt}>{data.microcmsBlog.updatedAt}</time></span></h2>
 
             <div className="post_img"><img src={data.microcmsBlog.eyecatch.url} alt="" /></div>
 
@@ -66,6 +66,7 @@ query($id: String) {
         title
         date(formatString: "YYYY年MM月DD日")
         updatedAt(formatString: "YYYY年MM月DD日")
+        createdAt(formatString: "YYYY-MM-DDTHH:MM")
         body
         eyecatch {
             url
