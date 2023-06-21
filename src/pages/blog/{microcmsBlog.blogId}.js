@@ -4,8 +4,16 @@ import { graphql,Link } from "gatsby"
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
 import Layout from '../../components/Layout'
+import Prism from 'prismjs'
+
+import 'prismjs/themes/prism-tomorrow.css'
 
 export default function BlogPage({data}) {
+
+    React.useEffect(() => {
+        Prism.highlightAll() // シンタックスハイライトを適用
+      }, [])
+ 
   return (
     <>
       <Header />
@@ -45,6 +53,7 @@ export default function BlogPage({data}) {
                     __html: `${data.microcmsBlog.body}`,
                 }}
             />
+            
 
             <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
 
@@ -67,7 +76,7 @@ query($id: String) {
         date(formatString: "YYYY年MM月DD日")
         updatedAt(formatString: "YYYY年MM月DD日")
         createdAt(formatString: "YYYY-MM-DDTHH:MM")
-        body
+        body        
         eyecatch {
             url
         }
