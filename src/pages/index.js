@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Seo from '../components/Seo'
 import Header from '../components/Header'
@@ -9,6 +9,8 @@ import ContactParts from '../components/ContactParts'
 import Footer from '../components/Footer'
 
 export default function index({data}) {
+  const blogs = data.blog.edges;
+  const portfolios = data.portfolio.edges;
   return (
     <>
 
@@ -57,13 +59,13 @@ export default function index({data}) {
         <div className='main-content'>
           <p className='sub-title'><span>Works</span> 製作実績</p>
           <div className='flex-wrap'>
-            {data.portfolio.edges.map(({ node }) => (
-              <>
-                <div className='works_box'>
+            {portfolios.map(({ node }) => (
+              
+                <div className='works_box' key={node.portfolioId}>
                 <a href={'/portfolio/' + node.portfolioId + '/'}><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></a>
                   <p><a href={'/portfolio/' + node.portfolioId + '/'}>{node.title}</a></p>
                 </div>
-              </>
+              
             ))}
           </div>
           <p className='center'><Link to="/portfolio/" className='bt01'>製作実績はこちら</Link></p>
@@ -76,13 +78,17 @@ export default function index({data}) {
           <h3 className='sub-title'>Information&amp;Blog</h3>
 
           <div className="flex-wrap mb60">
-            {data.blog.edges.map(({ node }) => (
-              <>
-                <div className="news_box">
-                  <div className="news_img"><img src={node.eyecatch.url + '?fm=webp'} width={200} height={133} alt={node.title + 'サムネイル画像'} loading="lazy" /></div>
+            {blogs.map(({ node }) => (
+              
+                <div className="news_box" key={node.blogId}>
+                  <div className="news_img">
+                  {node.eyecatch && (
+                  <GatsbyImage image={node.eyecatch.url} alt={node.title + 'サムネイル画像'} loading="lazy" />
+                  )}
+                  </div>
                   <div className="news_txt"><a href={node.category.slug + '/' + node.blogId + '/'}>{node.title}</a></div>
                 </div>
-              </>
+              
             ))}
           </div>        
 

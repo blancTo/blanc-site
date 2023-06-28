@@ -23,8 +23,8 @@ module.exports = {
     siteUrl: "https://www.blanc.to",
   },
   plugins: [
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
+    
+    
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -44,6 +44,9 @@ module.exports = {
       },
     },
     
+    
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,14 +54,7 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          quality: 75, //デフォルトは50
-        },
-      },
-    },
+    `gatsby-plugin-image`,
     {
       resolve: 'gatsby-source-microcms',
       options: {
