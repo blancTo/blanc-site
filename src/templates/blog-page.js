@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 
 import Header from '../components/Header'
-import Layout from "../components/Layout"
+import Layout from "../components/BlogLayout"
 import Seo from "../components/Seo"
 import { Pagination } from "../components/Pagination"
 

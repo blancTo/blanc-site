@@ -39,7 +39,7 @@ export default function KaijyoThanks() {
         </div>
 
         <Layout>
-            <h3 className="dark-red bold center">配信停止手続き完了</h3>
+            <h2 className="dark-red bold center">配信停止手続き完了</h2>
 
             <p className="center">配信亭処理を行いました。</p>
 

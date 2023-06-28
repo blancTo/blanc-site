@@ -3,7 +3,7 @@ import { graphql,Link } from "gatsby"
 
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
-import Layout from '../../components/Layout'
+import Layout from '../../components/BlogLayout'
 import Prism from 'prismjs'
 
 import 'prismjs/themes/prism-tomorrow.css'
@@ -18,7 +18,7 @@ export default function BlogPage({data}) {
     <>
       <Header />
         <div id="mainimage-sub">
-            <h1>ブログ</h1>
+            <p className='pagetitle'>ブログ</p>
             <p>Information&amp;Blog</p>
         </div>
         <div id="breadcrumb">
@@ -41,22 +41,27 @@ export default function BlogPage({data}) {
                 </li>
             </ul>
         </div>
+
+
+
         <Layout>
 
-            <h2 className='title'>{data.microcmsBlog.title}<br />
-            <span className='date'>更新日：<time dateTime={data.microcmsBlog.createdAt}>{data.microcmsBlog.updatedAt}</time></span></h2>
+            <h1 className='title'>{data.microcmsBlog.title}<br />
+            <span className='date'>更新日：<time dateTime={data.microcmsBlog.createdAt}>{data.microcmsBlog.updatedAt}</time></span></h1>
 
             <div className="post_img"><img src={data.microcmsBlog.eyecatch.url} alt="" /></div>
-
-            <div className="post_body"
-                dangerouslySetInnerHTML={{
-                    __html: `${data.microcmsBlog.body}`,
-                }}
-            />
             
+            <div className="post_body">
+                
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: `${data.microcmsBlog.body}`,
+                    }}
+                />
 
-            <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
+                <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
 
+            </div>
         </Layout>
     </>
   )

@@ -36,7 +36,7 @@ export default function PortfolioPage({data}) {
         </div>
         <Layout>
 
-            <h3>{data.microcmsPortfolio.title}</h3>
+            <h2>{data.microcmsPortfolio.title}</h2>
 
             <div className="post_img"><img src={data.microcmsPortfolio.eyecatch.url} alt="" /></div>
 

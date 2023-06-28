@@ -31,7 +31,7 @@ export default function index() {
         </div>
 
         <Layout>
-            <h3 className="dark-red bold center">配信停止手続き</h3>
+            <h2 className="dark-red bold center">配信停止手続き</h2>
             <form action="https://ssgform.com/s/rwPQ9ZobpA0d" method="post">
             <div style={{display: 'none'}}><input type="text" name="wana" /></div>
             <dl className="kaijyo_box">

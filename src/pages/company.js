@@ -30,7 +30,7 @@ export default function company() {
 
 
         <Layout>
-            <h3>会社概要</h3>
+            <h2>会社概要</h2>
             <table summary="会社概要" className="legal_notice">
                 <tbody>
                     <tr>
@@ -68,7 +68,7 @@ export default function company() {
                 </tbody>
             </table>
 
-            <h3>特定商取引法に基づく表示</h3>
+            <h2>特定商取引法に基づく表示</h2>
 
             <table summary="特定商取引法に基づく表示" className="legal_notice">
                 <tbody>

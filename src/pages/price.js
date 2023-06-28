@@ -170,7 +170,7 @@ export default function price() {
 
             <h2>個別作業料金表（税抜）</h2>
 
-            <p className="bold">HTML関連</p>
+            <h3>HTML関連</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="サポート内での作業">
@@ -219,7 +219,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">画像関連</p>
+            <h3>画像関連</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="画像関連">
@@ -248,7 +248,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">デザイン</p>
+            <h3>デザイン</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="デザイン">
@@ -292,7 +292,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">動画関連</p>
+            <h3>動画関連</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="動画関連">
@@ -326,7 +326,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">ドメイン・サーバー関連</p>
+            <h3>ドメイン・サーバー関連</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="ドメイン・サーバー関連">
@@ -375,7 +375,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">CGI・ASP関連</p>
+            <h3>CGI・ASP関連</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="CGI・ASP関連">
@@ -424,7 +424,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">その他</p>
+            <h3>その他</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="その他">
@@ -448,7 +448,7 @@ export default function price() {
                 </table>
             </div>
 
-            <p className="bold">面談</p>
+            <h3>面談</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="面談">

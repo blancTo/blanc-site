@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.22.5",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -38,7 +39,7 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
-    "gatsby": "^5.9.1",
+    "gatsby": "^5.11.0",
     "gatsby-plugin-canonical-urls": "^5.9.0",
     "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-google-tagmanager": "^5.9.0",
