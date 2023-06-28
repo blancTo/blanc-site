@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Seo from '../components/Seo'
 import Header from '../components/Header'
@@ -82,9 +82,9 @@ export default function index({data}) {
               
                 <div className="news_box" key={node.blogId}>
                   <div className="news_img">
-                  {node.eyecatch && (
-                  <GatsbyImage image={node.eyecatch.url} alt={node.title + 'サムネイル画像'} loading="lazy" />
-                  )}
+                  
+                  <img src={node.eyecatch.url + '?fm=webp'} alt={node.title + 'サムネイル画像'} loading="lazy" />
+                  
                   </div>
                   <div className="news_txt"><a href={node.category.slug + '/' + node.blogId + '/'}>{node.title}</a></div>
                 </div>
