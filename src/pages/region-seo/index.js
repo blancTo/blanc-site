@@ -119,6 +119,9 @@ export default function index() {
 
 export const Head = () => (
     <>
-      <Seo title="SEO対策" />
+        <Seo
+            title2="地域と業種に特化したSEO対策 | blancのSEOで検索順位を上げる！"
+            description="地域と業種に特化したSEO対策で、あなたのビジネスを検索結果の上位に！ホームページ作成からリニューアル、スマホ対応まで、あなたのビジネスをサポートします。"
+        />
     </>
   )
