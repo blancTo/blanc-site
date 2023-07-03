@@ -573,7 +573,12 @@ footer {
         background-size: 35% auto,50% auto;
     }
     .pagetitle { font-size: 3.6rem; margin-bottom: 0;}
-    
+    h1 { 
+        font-size: 3.6rem;
+        @media screen and (max-width: 768px) {
+            font-size: 2.4rem; text-align: center;
+        }
+    }
 }
 
 .main-content { width: 1080px; margin: 0 auto;
@@ -1008,7 +1013,7 @@ footer {
     .main-content {
         padding: 20px 0;
         @media screen and (max-width: 768px) {
-            padding: 15px;
+            padding: 0px;
         }
         h1 {
             font-weight: 900;
@@ -1034,7 +1039,15 @@ footer {
                 }
             }
         }
-        h2 { font-size: 3rem; background-color: #fff361; padding: 10px; margin: 40px 0 20px 0;}
+        h2 { 
+            font-size: 3rem;
+            background-color: #fff361;
+            padding: 10px;
+            margin: 40px 0 20px 0;
+            @media screen and (max-width: 768px) {
+                font-size: 2.4rem;
+            }
+        }
         h3 {
             font-size: 2.4rem;
             margin: 40px 0 20px 0;
@@ -1224,7 +1237,7 @@ footer {
     border-collapse: collapse;
     width: 100%;
     font-size: 1.6rem;
-    margin: 0 auto 3% auto;
+    margin: 1.5rem auto;
     padding: 0;
     border-top: 1px solid #E6E6E7;
     border-left: 1px solid #E6E6E7;
@@ -1234,7 +1247,7 @@ footer {
       text-align: right;
       vertical-align: top;
       font-weight: bold;
-      padding: 2% 3%;
+      padding: 10px 15px;
       border-right: 1px solid #E6E6E7;
       border-bottom: 1px solid #E6E6E7;
       width: 25%;
@@ -1247,7 +1260,7 @@ footer {
   
     td {
       color: #000;
-      padding: 2% 3%;
+      padding: 10px 15px;
       border-right: 1px solid #e3e3e3;
       border-bottom: 1px solid #e3e3e3;
       @media screen and (max-width: 768px) {

@@ -10,7 +10,7 @@ export default function index() {
         
         <Header />
         <div id="mainimage-sub">
-            <h1>SSGサイト制作見積もり依頼フォーム</h1>
+            <h1>SSGサイト制作<br className='smp' />見積もり依頼フォーム</h1>
             <p>SSG Form</p>
         </div>
         <div id="breadcrumb">
@@ -34,7 +34,7 @@ export default function index() {
             </ul>
         </div>
         <Layout>
-            <h3>SSGサイト制作見積もり依頼フォーム</h3>
+            <h2>SSGサイト制作見積もり依頼フォーム</h2>
             
             <p>お見積りは、こちらのメールフォームよりお気軽にご相談下さい。<br />
             なお、折り返しご連絡させていただく際に必要になりますので、メールアドレスはお間違えになりませんようご注意下さい。</p>
