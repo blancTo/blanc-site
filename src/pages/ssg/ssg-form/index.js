@@ -64,6 +64,10 @@ export default function index() {
                             <td><input type="email" data-type="email" name="confirm_email" data-post-disable={1} size={40} required="required" /></td>
                         </tr>
                         <tr>
+                            <th>電話番号<span className="must">必須</span></th>
+                            <td><input type="tel" data-type="tel" name="電話番号" size={30} data-min={9} required="required" /></td>
+                        </tr>
+                        <tr>
                             <th>ホームページURL<span className="must">必須</span></th>
                             <td><input type="url" data-type="url" name="ホームページURL" size={60} required="required" /></td>
                         </tr>
