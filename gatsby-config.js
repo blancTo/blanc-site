@@ -23,9 +23,9 @@ module.exports = {
     siteUrl: "https://www.blanc.to",
   },
   plugins: [
-    
-    
+        
     `gatsby-plugin-sass`,
+    'gatsby-plugin-smoothscroll',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -141,6 +141,8 @@ module.exports = {
         },
       },
     },
+
+    
     
   ],
 }

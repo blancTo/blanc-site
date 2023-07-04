@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql,Link } from "gatsby"
+import cheerio from 'cheerio'
 
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
@@ -12,59 +13,71 @@ export default function BlogPage({data}) {
 
     React.useEffect(() => {
         Prism.highlightAll() // シンタックスハイライトを適用
-      }, [])
- 
-  return (
-    <>
-      <Header />
-        <div id="mainimage-sub">
-            <p className='pagetitle'>ブログ</p>
-            <p>Information&amp;Blog</p>
-        </div>
-        <div id="breadcrumb">
-            <ul itemType="https://schema.org/BreadcrumbList">
-                <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
-                    <a href="https://www.blanc.to" itemProp="item">
-                        <span itemProp="name">ホーム</span>
-                    </a>
-                    <meta itemProp="position" content="1" />
-                </li>
-                <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
-                    <Link to="/blog/" itemProp="item">
-                        <span itemProp="name">ブログ</span>
-                    </Link>
-                    <meta itemProp="position" content="2" />
-                </li>
-                <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
-                <span itemProp="name">{data.microcmsBlog.title}</span>
-                    <meta itemProp="position" content="3" />
-                </li>
-            </ul>
-        </div>
+        }, [])
 
+    const extractHeadings = body => {
+    const $ = cheerio.load(body)
+    const headings = []
 
+    $('h2, h3, h4').each((index, element) => {
+        const $element = $(element)
+        headings.push({
+        id: $element.attr('id'),
+        title: $element.text()
+        })
+    })
 
-        <Layout>
+    return headings
+    }
 
-            <h1 className='title'>{data.microcmsBlog.title}<br />
-            <span className='date'>更新日：<time dateTime={data.microcmsBlog.createdAt}>{data.microcmsBlog.updatedAt}</time></span></h1>
-
-            <div className="post_img"><img src={data.microcmsBlog.eyecatch.url} alt="" /></div>
-            
-            <div className="post_body">
-                
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: `${data.microcmsBlog.body}`,
-                    }}
-                />
-
-                <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
-
+    const body = data.microcmsBlog.body    
+    const headings = extractHeadings(body) || [];
+    return (
+        <>
+        <Header />
+            <div id="mainimage-sub">
+                <p className='pagetitle'>ブログ</p>
+                <p>Information&amp;Blog</p>
             </div>
-        </Layout>
-    </>
-  )
+            <div id="breadcrumb">
+                <ul itemType="https://schema.org/BreadcrumbList">
+                    <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
+                        <a href="https://www.blanc.to" itemProp="item">
+                            <span itemProp="name">ホーム</span>
+                        </a>
+                        <meta itemProp="position" content="1" />
+                    </li>
+                    <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
+                        <Link to="/blog/" itemProp="item">
+                            <span itemProp="name">ブログ</span>
+                        </Link>
+                        <meta itemProp="position" content="2" />
+                    </li>
+                    <li className="breadcrumb__item" itemProp="itemListElement" itemType="https://schema.org/ListItem">
+                    <span itemProp="name">{data.microcmsBlog.title}</span>
+                        <meta itemProp="position" content="3" />
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <Layout headings={headings}>
+
+                <h1 className='title'>{data.microcmsBlog.title}<br />
+                <span className='date'>更新日：<time dateTime={data.microcmsBlog.createdAt}>{data.microcmsBlog.updatedAt}</time></span></h1>
+
+                <div className="post_img"><img src={data.microcmsBlog.eyecatch.url} alt="" /></div>
+                
+                <div className="post_body">
+                <div dangerouslySetInnerHTML={{ __html: body }} />
+
+                    <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
+
+                </div>
+            </Layout>
+        </>
+    )
 }
 
 export const Head = ({data}) => (

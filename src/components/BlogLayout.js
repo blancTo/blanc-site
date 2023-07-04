@@ -1,11 +1,11 @@
 import React from 'react'
-
 import { graphql,Link, useStaticQuery } from "gatsby"
 import Footer from './Footer'
 import Contact from './ContactParts'
+import Mokuji from './Mokuji'
 
-export default function BlogLayout({ children }) {
-    const data = useStaticQuery(graphql`
+const BlogLayout = ({children, headings}) => {
+  const data = useStaticQuery(graphql`
     query {
       allMicrocmsBlog(sort: {date: DESC}, limit: 5, skip: 0) {
         edges {
@@ -22,9 +22,8 @@ export default function BlogLayout({ children }) {
       }
     }
   `);
-  
-    return (
-      <>
+  return (
+    <>
       <main role='main' id='post'>
       <article id='subpage'>
         <div className='main-content'>
@@ -34,6 +33,7 @@ export default function BlogLayout({ children }) {
       <aside id='sidebar'>
         
         <div className='side-inner'>
+        <Mokuji headings={headings} />
         <h3>最近の記事</h3>
         <ul className='post_list'>
         {data.allMicrocmsBlog.edges.map(({ node }) => (
@@ -58,3 +58,7 @@ export default function BlogLayout({ children }) {
       </>
   )
 }
+
+export default BlogLayout
+
+
