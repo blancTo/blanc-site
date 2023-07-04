@@ -29,6 +29,9 @@ export default function index({data}) {
         </div>
         <Layout>
 
+          <p className='bold center txt20'>これまでの制作実績の一部をご紹介します。<br />
+          その他の実績ついてはお問い合わせください。</p>
+
         <div className='flex-wrap'>
         {data.allMicrocmsPortfolio.edges.map(({ node }) => (
             <>

@@ -1005,6 +1005,25 @@ footer {
             }
             
         }
+        .mokuji_box {
+            margin-bottom: 25px;
+            ul {
+                padding: 15px; background-color: #f5f5f5; border-radius: 10px; 
+                li{
+                    list-style: disc; margin-left:15px;
+                    &::marker {
+                        color: #ccc; /* マーカーの色を赤に変更する */
+                      }
+                    a {
+                        font-size: 1.4rem;
+                        color: #000;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        &:hover { opacity: 0.5;}
+                    }
+                }
+            }
+        }
     }
 
 }
@@ -1186,6 +1205,13 @@ footer {
 
 .txt160p {
     font-size: 160%!important;
+}
+
+.txt16 {
+    font-size: 1.6rem!important;
+}
+.txt20 {
+    font-size: 2rem!important;
 }
 .txt30 {
     font-size: 3rem!important;
