@@ -3,6 +3,7 @@ import { graphql,Link, useStaticQuery } from "gatsby"
 import Footer from './Footer'
 import Contact from './ContactParts'
 import Mokuji from './Mokuji'
+import PageTop from '../components/PageTop'
 
 const BlogLayout = ({children, headings}) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +25,7 @@ const BlogLayout = ({children, headings}) => {
   `);
   return (
     <>
+      <PageTop />
       <main role='main' id='post'>
       <article id='subpage'>
         <div className='main-content'>

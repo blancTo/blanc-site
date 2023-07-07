@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql } from "gatsby"
+import { graphql,Link } from "gatsby"
 
 import Header from '../components/Header'
 import Layout from "../components/BlogLayout"
@@ -32,12 +32,12 @@ export default function BlogPage({data}) {
         <Layout>
           <h2 className="page_title01 mt0">ブログ</h2>
           
-          <div className="flex-wrap mb60">
+          <div className="flex-wrap p15_smp">
             {data.allMicrocmsBlog.edges.map(({ node }) => (
             <>
               <div className="news_box">
                 <div className="news_img"><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></div>
-                <div className="news_txt"><a href={'/blog/' + node.blogId + '/'}>{node.title}</a></div>
+                <div className="news_txt"><Link to={'/blog/' + node.blogId + '/'}>{node.title}</Link></div>
               </div>
             </>
             ))}

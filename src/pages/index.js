@@ -7,12 +7,14 @@ import Header from '../components/Header'
 import Service from '../components/Service'
 import ContactParts from '../components/ContactParts'
 import Footer from '../components/Footer'
+import PageTop from '../components/PageTop'
 
 export default function index({data}) {
   const blogs = data.blog.edges;
   const portfolios = data.portfolio.edges;
   return (
     <>
+    <PageTop />
 
     <Header />
 
@@ -60,11 +62,14 @@ export default function index({data}) {
           <p className='sub-title'><span>Works</span> 製作実績</p>
           <div className='flex-wrap'>
             {portfolios.map(({ node }) => (
-              
-                <div className='works_box' key={node.portfolioId}>
-                <a href={'/portfolio/' + node.portfolioId + '/'}><img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" /></a>
-                  <p><a href={'/portfolio/' + node.portfolioId + '/'}>{node.title}</a></p>
-                </div>
+              <div className='works_box' key={node.portfolioId}>
+                <Link to={'/portfolio/' + node.portfolioId + '/'}>
+                  <img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading="lazy" />
+                </Link>
+                <Link to={'/portfolio/' + node.portfolioId + '/'}>
+                  <span>{node.title}</span>
+                </Link>
+              </div>
               
             ))}
           </div>
@@ -79,16 +84,14 @@ export default function index({data}) {
 
           <div className="flex-wrap mb60">
             {blogs.map(({ node }) => (
-              
-                <div className="news_box" key={node.blogId}>
-                  <div className="news_img">
-                  
+              <div className="news_box" key={node.blogId}>
+                <div className="news_img">
                   <img src={node.eyecatch.url + '?fm=webp'} alt={node.title + 'サムネイル画像'} loading="lazy" />
-                  
-                  </div>
-                  <div className="news_txt"><a href={node.category.slug + '/' + node.blogId + '/'}>{node.title}</a></div>
                 </div>
-              
+                <div className="news_txt">
+                  <Link to={node.category.slug + '/' + node.blogId + '/'}>{node.title}</Link>
+                </div>
+              </div>
             ))}
           </div>        
 

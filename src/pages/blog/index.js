@@ -30,7 +30,7 @@ export default function index({data}) {
         </div>
         <Layout>
 
-        <div className="flex-wrap mb60">
+        <div className="flex-wrap p15_smp">
           {data.allMicrocmsBlog.edges.map(({ node }) => (
             <>
               <div className="news_box">

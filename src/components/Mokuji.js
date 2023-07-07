@@ -7,7 +7,7 @@ const Mokuji = ({ headings }) => {
   }
 
   return (
-    <nav className="mokuji_box">
+    <nav className="mokuji_box pc">
       <h3>もくじ</h3>
       <ul>
         <li><Link to="subpage" smooth={true} duration={500}>記事トップ</Link></li>
