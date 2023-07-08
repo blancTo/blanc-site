@@ -19,7 +19,7 @@ export default function index({data}) {
     <Header />
 
     <div id='mainimage'>
-      <h1>ホームページ作成<br className='smp' />88,000円から</h1>
+      <h1>ホームページ作成<br className='smp' />198,000円から</h1>
       <p className='txt140p'>スマホ・常時SSL・ワードプレスにも対応</p>
       <Link to="/renewal/" className='bt'>詳しく見る</Link>
     </div>
