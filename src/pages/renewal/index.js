@@ -34,7 +34,7 @@ const RenewalIndex = ({data}) => {
         </div>
         <Layout>
 
-            <h2>ホームページ作成198,000円から<br />
+            <h2>ホームページ作成198,000円<br />
             （スマホ・常時SSL・ワードプレスにも対応）</h2>
 
             <div className="list03">
@@ -51,7 +51,7 @@ const RenewalIndex = ({data}) => {
                     <li><FontAwesomeIcon icon={faCheck} />ご希望のデザインでホームページを新しく作り変えます。</li>
                     <li><FontAwesomeIcon icon={faCheck} />ヒアリングを元にお伝え頂いた色味や雰囲気でWEBデザイナーがデザイン案を作成します。</li>
                     <li><FontAwesomeIcon icon={faCheck} />デザイン案の修正や変更はご納得頂けるまで行います。</li>
-                    <li><FontAwesomeIcon icon={faCheck} />5ページを超える場合は別途お見積り。</li>
+                    <li><FontAwesomeIcon icon={faCheck} />10ページを超える場合は別途お見積り。</li>
                     <li><FontAwesomeIcon icon={faCheck} />標準的な問い合わせフォーム1個設置。</li>
                 </ul>
             </div>
@@ -79,6 +79,16 @@ const RenewalIndex = ({data}) => {
                 </ul>
             </div>
 
+            <h3>スマホ対応</h3>
+            <div className="list01">
+                <ul>
+                    <li>
+                        <span className='bg_marker'><FontAwesomeIcon icon={faPen} />スマホ対応（レスポンシブ）を行います。</span><br />
+                        <span className='txt14'>※<Link to="/responsive/">スマホ対応の詳しいご説明はこちらから。</Link></span>
+                    </li>
+                </ul>
+            </div>
+
             <h3>常時SSL対応</h3>
             <div className="list01">
                 <ul>
@@ -90,31 +100,23 @@ const RenewalIndex = ({data}) => {
                 </ul>
             </div>
 
-            <h3>blancサポート（月額5,000円＋税）</h3>
-            <div className="list01">
-                <ul>
-                    <li>
-                        <span className='bg_marker'><FontAwesomeIcon icon={faPen} />面倒なホームページの更新や修正も月3回～ご依頼頂けます。</span><br />
-                        <span className='txt14'>※<Link to="/price/">blancサポート</Link>（ドメイン・サーバー維持費、サイト更新作業、SEO対策）</span>
-                    </li>
-                </ul>
-            </div>
-
-            <h3>スマホ対応</h3>
-            <div className="list01">
-                <ul>
-                    <li>
-                        <span className='bg_marker'><FontAwesomeIcon icon={faPen} />スマホ対応（レスポンシブ）を行います。</span><br />
-                        <span className='txt14'>※<Link to="/responsive/">スマホ対応の詳しいご説明はこちらから。</Link></span>
-                    </li>
-                </ul>
-            </div>
             <h3>Wordpress（ワードプレス）対応</h3>
             <div className="list01">
                 <ul>
                     <li>
                         <span className='bg_marker'><FontAwesomeIcon icon={faPen} />ワードプレスにてサイト作成します。</span><br />
                         <span className='txt14'>※ワードプレスが不要な場合は168,000円。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>blancサポート・スタンダード</h3>
+            <div className="list01">
+                <ul>
+                    <li>
+                        <span className='bg_marker'><FontAwesomeIcon icon={faPen} />面倒なホームページの更新や修正も月3回～ご依頼頂けます。</span><br />
+                        <span className='txt14'>※<Link to="/price/">blancサポート・スタンダード</Link>が月額5,000円＋税（弊社でホームページ制作を行って頂いた方のみ。）</span><br />
+                        <span className='txt14'>※<Link to="/price/">※blancサポート・スタンダード</Link>（ドメイン・サーバー維持費、サイト更新作業、SEO対策）</span>
                     </li>
                 </ul>
             </div>
