@@ -7,7 +7,6 @@ import Seo from '../../../components/Seo'
 export default function index() {
   return (
     <>
-      
         <Header />
         <div id="mainimage-sub">
             <h1>「ホームページリニューアル」お申し込みフォーム</h1>
