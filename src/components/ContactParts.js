@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export default function ContactParts() {
   return (
@@ -7,7 +9,7 @@ export default function ContactParts() {
     <section id='contact'>
         <div className='main-content'>
             
-            <p className='contact_title'>まずはお気軽にご相談ください。</p>
+            
             <p>ホームページの作成、更新、SEOに関する<br className='smp' />お問い合わせ・お見積もり依頼は、<br />
             電話・問い合わせフォームでも受け付けております。</p>
             
@@ -19,7 +21,10 @@ export default function ContactParts() {
             </p>
             
             <p>受付時間　平日 9：00～18：00</p>
-            <p><Link to="/toiawase/"><img src="/images/contact_bt.png" width={700} alt="お問い合わせはこちら" loading="lazy" /></Link></p>
+            
+            <p><Link to="/toiawase/" className='bt02'><FontAwesomeIcon icon={faEnvelope} /> メールでのお問い合わせはこちら</Link></p>
+
+            <p className='contact_title'>まずはお気軽にご相談ください。</p>
             
         </div>
     </section>

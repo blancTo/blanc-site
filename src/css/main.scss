@@ -1098,7 +1098,7 @@ footer {
             }
         }
         h2 { 
-            font-size: 3rem;
+            font-size: 3.6rem;
             background-color: #fff361;
             padding: 10px;
             margin: 40px 0 20px 0;
@@ -1107,9 +1107,9 @@ footer {
             }
         }
         h3 {
-            font-size: 2.4rem;
+            font-size: 3rem;
             margin: 40px 0 20px 0;
-            border-bottom: #000 solid 1px;
+            
             &:first-child { margin-top: 20px; }
             @media screen and (max-width: 768px) {
                 font-size: 140%;
@@ -1118,10 +1118,10 @@ footer {
             }
         }
         h4 {        
-            font-size: 1.8rem;            
+            font-size: 2rem;            
             padding-bottom: 5px;
-            margin-top: 20px;
-            color: #0096da;
+            border-bottom: #000 solid 1px;
+            margin: 40px 0 20px 0;
             @media screen and (max-width: 768px) {
                 font-size: 1.6rem;
             }
@@ -1234,9 +1234,10 @@ footer {
     color:#fff;
     text-align: center;
     font-weight:700;
+    font-size: 2.4rem;
     border:solid 2px $main-color;
     text-decoration:none;
-    padding:10px 20px;
+    padding:5px 10px;
     position: relative; 
     transition: .5s;
     min-width: 100%;
