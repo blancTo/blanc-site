@@ -23,8 +23,6 @@ export default function ContactParts() {
             <p>受付時間　平日 9：00～18：00</p>
             
             <p><Link to="/toiawase/" className='bt02'><FontAwesomeIcon icon={faEnvelope} /> メールでのお問い合わせはこちら</Link></p>
-
-            <p className='contact_title'>まずはお気軽にご相談ください。</p>
             
         </div>
     </section>

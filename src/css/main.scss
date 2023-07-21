@@ -1247,6 +1247,9 @@ footer {
     @media screen and (min-width: 1200px) {
         min-width: 200px;
     }
+    @media not screen and (min-width: 767px) {
+        font-size: 1.6rem;
+    }
 }
 
 .txt160p {
