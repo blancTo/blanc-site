@@ -4,7 +4,8 @@ import cheerio from 'cheerio'
 
 import Seo from '../../components/Seo'
 import Header from '../../components/Header'
-import Layout from '../../components/BlogLayout'
+import Layout from '../../components/BlogPageLayout'
+
 import Prism from 'prismjs'
 
 import 'prismjs/themes/prism-tomorrow.css'
@@ -75,6 +76,7 @@ export default function BlogPage({data}) {
                     <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
 
                 </div>
+
             </Layout>
         </>
     )

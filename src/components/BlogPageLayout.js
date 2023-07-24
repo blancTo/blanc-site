@@ -4,9 +4,10 @@ import Footer from './Footer'
 import Contact from './ContactParts'
 import Mokuji from './Mokuji'
 import PageTop from '../components/PageTop'
+import SearchResult from './SearchResult'
 
-const BlogLayout = ({children, headings}) => {
-  const data = useStaticQuery(graphql`
+const BlogPageLayout = ({children, headings}) => {
+    const data = useStaticQuery(graphql`
     query {
       allMicrocmsBlog(sort: {date: DESC}, limit: 5, skip: 0) {
         edges {
@@ -30,6 +31,7 @@ const BlogLayout = ({children, headings}) => {
       <article id='subpage'>
         <div className='main-content'>
             { children }
+            <SearchResult />
         </div>
       </article>
       <aside id='sidebar'>
@@ -62,6 +64,4 @@ const BlogLayout = ({children, headings}) => {
   )
 }
 
-export default BlogLayout
-
-
+export default BlogPageLayout

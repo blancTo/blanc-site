@@ -142,7 +142,24 @@ module.exports = {
       },
     },
 
-    
+    {
+      resolve: "gatsby-plugin-flexsearch",
+      options: {
+        languages: ["ja"], // 検索対象となる言語を指定します。複数の言語を指定できます。
+        type: "allMicrocmsBlog", // 検索対象とするGraphQLの型名を指定します。
+        fields: [
+          // 検索対象とするフィールドを指定します。
+          {
+            name: "title", // フィールド名
+            indexed: true, // インデックス化するかどうか
+            resolver: "frontmatter.title", // フィールドの値を取得するGraphQLリゾルバー
+          },
+          // 他のフィールドも必要に応じて指定します
+        ],
+        // インデックス作成時の設定を指定します（オプション）。
+        // 詳細な設定は公式ドキュメントを参照してください。
+      },
+    },
     
   ],
 }

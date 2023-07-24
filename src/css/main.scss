@@ -1746,3 +1746,11 @@ display: inline-block;
   .scroll-to-top.visible {
     opacity: 1;
   }
+
+  .search_form { display: flex; align-items: center; justify-content: center; }
+  .search_txt { border-radius: 0!important;}
+  .search_bt { padding: 10px;
+    border: solid 1px #2fb3f6;
+    background-color: #2fb3f6;
+    color: #fff;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Helvetica Neue", Arial, Meiryo, sans-serif;}
