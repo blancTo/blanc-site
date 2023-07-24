@@ -264,6 +264,7 @@ export const Head = () => (
     <>
       <Seo
         title2="ホームページ修正・更新 | 他社作成HPも対応 - 有限会社blanc"
+        description="ームページの更新や修正に困っていませんか？blancはあなたのウェブサイトを効果的に改善し、集客力を高めます。"
       />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </>
