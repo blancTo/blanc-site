@@ -1,64 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 
-const Mokuji = ({ headings }) => {
+const Mokuji = () => {
+  const [headings, setHeadings] = useState([]);
   const [currentHeading, setCurrentHeading] = useState(null);
 
   useEffect(() => {
-    // スクロール時のイベントリスナーを追加
     const handleScroll = () => {
-      // 目次内の各要素の位置を取得
-      const headingElements = headings.map(heading => {
-        const element = document.getElementById(heading.id);
-        return { id: heading.id, offsetTop: element.offsetTop };
+      const scrollY = window.scrollY;
+      const headingElements = document.querySelectorAll('h2'); // h2要素を取得
+
+      const headingsData = Array.from(headingElements).map((element) => {
+        return {
+          id: element.getAttribute('id'),
+          title: element.textContent,
+        };
       });
 
-      // スクロール位置に対してオフセットを設定
-      const offset = 100; // オフセットの値を調整
+      setHeadings(headingsData);
 
-      // 現在のスクロール位置に応じてカレント要素を特定
-      const scrollY = window.scrollY + offset;
-      const currentElement = headingElements.find(
-        heading => scrollY >= heading.offsetTop && scrollY < heading.offsetTop + 100 // カレント要素を特定する範囲を調整
-      );
-
-      if (currentElement) {
-        setCurrentHeading(currentElement.id);
-      } else {
-        setCurrentHeading(null);
+      let currentHeadingId = null;
+      for (let i = headingsData.length - 1; i >= 0; i--) {
+        const { id } = headingsData[i];
+        const targetElement = document.getElementById(id);
+        if (scrollY >= targetElement.offsetTop - 100) {
+          currentHeadingId = id;
+          break;
+        }
       }
+
+      setCurrentHeading(currentHeadingId);
     };
 
-    // スクロール時のイベントリスナーを追加
     window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    // コンポーネントがアンマウントされる際にイベントリスナーを削除
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [headings]);
+  if (!headings || headings.length === 0) {
+    return null;
+  }
 
   return (
     <nav className="mokuji_box pc">
       <h3>もくじ</h3>
       <ul>
-        {/* 記事トップへのリンクにactiveClassを削除 */}
-        <li><Link to="subpage" smooth={true} duration={500} spy={true} offset={-100} activeClass="">記事トップ</Link></li>
-        {headings.map(heading => (
-          <li key={heading.id}>
-            <Link
-              to={heading.id}
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-50}
-              activeClass="active"
-              className={currentHeading === heading.id ? 'current' : ''}
-            >
-              {heading.title}
-            </Link>
-          </li>
-        ))}
+        <li>
+          <Link to="subpage" smooth={true} duration={500}>
+            記事トップ
+          </Link>
+        </li>
+        {headings.map((heading) => {
+          const headingClass = heading.id === currentHeading ? 'current h2-class' : 'h2-class';
+
+          return (
+            <li key={heading.id}>
+              <Link to={heading.id} smooth={true} duration={500} className={headingClass}>
+                {heading.title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
