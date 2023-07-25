@@ -44,11 +44,7 @@ const Mokuji = () => {
     <nav className="mokuji_box pc">
       <h3>もくじ</h3>
       <ul>
-        <li>
-          <Link to="subpage" smooth={true} duration={500}>
-            記事トップ
-          </Link>
-        </li>
+        
         {headings.map((heading) => {
           const headingClass = heading.id === currentHeading ? 'current h2-class' : 'h2-class';
 
