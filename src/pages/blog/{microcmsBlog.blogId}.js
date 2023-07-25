@@ -69,13 +69,12 @@ export default function BlogPage({data}) {
                 <span className='date'>更新日：<time dateTime={data.microcmsBlog.createdAt}>{data.microcmsBlog.updatedAt}</time></span></h1>
 
                 <div className="post_img"><img src={data.microcmsBlog.eyecatch.url} alt="" /></div>
+
+                <div dangerouslySetInnerHTML={{ __html: body }} className='post_body' />
+
                 
-                <div className="post_body">
-                <div dangerouslySetInnerHTML={{ __html: body }} />
 
-                    <p className="center"><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></p>
-
-                </div>
+                
 
             </Layout>
         </>

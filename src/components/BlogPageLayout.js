@@ -31,6 +31,7 @@ const BlogPageLayout = ({children, headings}) => {
       <article id='subpage'>
         <div className='main-content'>
             { children }
+            
             <SearchResult />
         </div>
       </article>

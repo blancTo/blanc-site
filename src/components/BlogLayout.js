@@ -36,7 +36,7 @@ const BlogLayout = ({children, headings}) => {
         
         
         <div className='side-inner'>
-        <Mokuji headings={headings} />
+        
         <h3>最近の記事</h3>
         <ul className='post_list'>
         {data.allMicrocmsBlog.edges.map(({ node }) => (

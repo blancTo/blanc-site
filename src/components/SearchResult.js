@@ -6,7 +6,7 @@ const SearchResult = ({ results }) => {
   return (
     <div>      
       {results.length === 0 ? (
-        <p className='center'>検索するキーワードを入力してください</p>
+        <p className='center'>検索ボックスへキーワードを入力してください</p>
       ) : (
         
         <div className="flex-wrap mb60">
@@ -35,8 +35,10 @@ const SearchPage = () => {
 
   return (
     <>
-      <h2>関連ページを検索する</h2>
-      <SearchForm onSearch={handleSearch} />
+      <div className='flex-center'>
+        <div className='ichiran_bt'><Link to="/blog/" className='bt01'>記事一覧へ戻る</Link></div>
+        <div className='search_form_box'><SearchForm onSearch={handleSearch} /></div>
+      </div>
       <SearchResult results={searchResults} />
     </>
   );
