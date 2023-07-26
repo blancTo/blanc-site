@@ -77,7 +77,7 @@ export default function index() {
         </table>
 
         <p className="center">
-            <button type="submit" className="bt02">お申込み</button>　<button type="reset" className="bt02">リセット</button>
+            <button type="submit" className="bt02">送信する</button>　<button type="reset" className="bt02">リセット</button>
         </p>
 
         </form>
