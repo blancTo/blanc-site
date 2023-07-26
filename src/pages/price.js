@@ -448,7 +448,7 @@ export default function price() {
                 </table>
             </div>
 
-            <h3>面談</h3>
+            <h3>面談・リモート</h3>
 
             <div class="slidetable">
                 <table className="price-list" summary="面談">
@@ -468,6 +468,12 @@ export default function price() {
                             <td>11,000円（税込）</td>
                             <td>お伺いして打ち合わせを行います。<br />
                             <span className="smaller">※交通費実費</span></td>
+                        </tr>
+                        <tr>
+                            <td>リモートPCサポート（1時間）</td>
+                            <td>5,500円（税込）</td>
+                            <td>クイックアシストによるPCサポート<br />
+                            <span className="smaller">※Windowsのみ</span></td>
                         </tr>
                     </tbody>
                 </table>
