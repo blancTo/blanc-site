@@ -95,6 +95,10 @@ a:hover img { filter: alpha(opacity=60); opacity: 0.6; }
     display: flex; flex-wrap: wrap;
 }
 
+.flex-center {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+}
+
 #header {
     box-sizing: border-box;
     position: relative;
@@ -1054,13 +1058,16 @@ footer {
                 li{
                     list-style: disc; margin-left:15px;
                     &::marker {
-                        color: #ccc; /* マーカーの色を赤に変更する */
+                        color: #ccc;
                       }
                     a {
                         font-size: 1.4rem;
                         color: #000;
                         cursor: pointer;
                         transition: all 0.3s ease;
+                        &.current {                            
+                            color: #2fb3f6;
+                        }
                         &:hover { opacity: 0.5;}
                     }
                 }
@@ -1101,14 +1108,14 @@ footer {
             font-size: 3.6rem;
             background-color: #fff361;
             padding: 10px;
-            margin: 40px 0 20px 0;
+            margin: 40px 0 30px 0;
             @media screen and (max-width: 768px) {
                 font-size: 2.4rem;
             }
         }
         h3 {
             font-size: 3rem;
-            margin: 40px 0 20px 0;
+            margin: 40px 0 30px 0;
             
             &:first-child { margin-top: 20px; }
             @media screen and (max-width: 768px) {
@@ -1156,6 +1163,8 @@ footer {
     text-align: center;
     img { margin: 20px auto; }
 }
+
+.post_body { margin-bottom: 4rem;}
 
 .koushin_naiyo { width: 100%; background: #eaf5fc; margin: 10px auto; border-radius: 10px; padding: 3%; }
 
@@ -1211,19 +1220,24 @@ footer {
 
 .bt01 { 
     display: inline-block;
-    border-radius: 50px; background:$main-color; color:#fff; text-align: center;font-weight:900; font-size:1.6rem; border:solid 2px $main-color; text-decoration:none; padding:10px 20px; position: relative; 
-    transition: .5s;
-    
+    border-radius: 50px;
+    background:$main-color;
+    color:#fff;
+    text-align: center;
+    font-weight:900;
+    font-size:1.6rem;
+    border:solid 2px $main-color;
+    text-decoration:none;
+    padding:10px 20px;
+    position: relative; 
+    transition: .5s;    
     &:hover { text-decoration:none; border:solid 2px $main-color; background:#fff; color:$main-color;}
     .fa-envelope { margin-right: 10px;}
     @media screen and (min-width: 1025px) {
         min-width: 300px;
     }
-
     @media not screen and (min-width: 1025px) {
-
-    min-width: 200px;
-
+        min-width: 200px;
     }
 }
 
@@ -1234,7 +1248,32 @@ footer {
     color:#fff;
     text-align: center;
     font-weight:700;
-    font-size: 2.4rem;
+    font-size: 2rem;
+    border:solid 2px $main-color;
+    text-decoration:none;
+    padding:10px;
+    position: relative; 
+    transition: .5s;
+    min-width: 100%;
+    margin: 10px 0;
+    cursor: pointer;
+    &:hover { text-decoration:none; border:solid 2px $main-color; background:#fff; color:$main-color;}
+    @media screen and (min-width: 1200px) {
+        min-width: 200px;
+    }
+    @media not screen and (min-width: 767px) {
+        font-size: 1.6rem;
+    }
+}
+
+.contact_bt { 
+    display: inline-block;
+    border-radius: 5px;
+    background:$main-color;
+    color:#fff;
+    text-align: center;
+    font-weight:700;
+    font-size: 2.6rem;
     border:solid 2px $main-color;
     text-decoration:none;
     padding:5px 10px;
@@ -1250,6 +1289,20 @@ footer {
     @media not screen and (min-width: 767px) {
         font-size: 1.6rem;
     }
+}
+
+a span.bt_link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #22ac38;
+    color:#fff;
+    font-weight: 900;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+a:hover span.bt_link {
+    opacity: 0.5;
 }
 
 .txt160p {
@@ -1283,35 +1336,32 @@ footer {
     margin: 3% auto;
     padding: 0;
     border-top: 1px solid #e3e3e3;
-    border-left: 0px solid #e3e3e3;
-  
+    border-left: 0px solid #e3e3e3;  
     th {
-      color: #000;
-      background-color: #f5f5f5;
-      text-align: left;
-      vertical-align: top;
-      font-weight: bold;
-      padding: 2% 3%;
-      border-right: 0px solid #e3e3e3;
-      border-bottom: 1px solid #e3e3e3;
-      width: 25%;
-      @media screen and (max-width: 768px) {
-        display: block;
-        width: 100%;        
-      }
-    }
-  
+        color: #000;
+        background-color: #f5f5f5;
+        text-align: left;
+        vertical-align: top;
+        font-weight: bold;
+        padding: 2% 3%;
+        border-right: 0px solid #e3e3e3;
+        border-bottom: 1px solid #e3e3e3;
+        width: 25%;
+        @media screen and (max-width: 768px) {
+            display: block;
+            width: 100%;        
+        }
+    }  
     td {
-      color: #000;
-      padding: 2% 3%;
-      border-right: 0px solid #e3e3e3;
-      border-bottom: 1px solid #e3e3e3;
-      @media screen and (max-width: 768px) {
-        display: block;
-        width: 100%;
-      }
+        color: #000;
+        padding: 2% 3%;
+        border-right: 0px solid #e3e3e3;
+        border-bottom: 1px solid #e3e3e3;
+        @media screen and (max-width: 768px) {
+            display: block;
+            width: 100%;
+        }
     }
-
 }
 
 .form {
@@ -1321,33 +1371,31 @@ footer {
     margin: 1.5rem auto;
     padding: 0;
     border-top: 1px solid #E6E6E7;
-    border-left: 1px solid #E6E6E7;
-  
+    border-left: 1px solid #E6E6E7;  
     th {
-      background-color: #F2F2F3;
-      text-align: right;
-      vertical-align: top;
-      font-weight: bold;
-      padding: 10px 15px;
-      border-right: 1px solid #E6E6E7;
-      border-bottom: 1px solid #E6E6E7;
-      width: 25%;
-      @media screen and (max-width: 768px) {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
+        background-color: #F2F2F3;
+        text-align: right;
+        vertical-align: top;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-right: 1px solid #E6E6E7;
+        border-bottom: 1px solid #E6E6E7;
+        width: 25%;
+        @media screen and (max-width: 768px) {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
     }
-  
     td {
-      color: #000;
-      padding: 10px 15px;
-      border-right: 1px solid #e3e3e3;
-      border-bottom: 1px solid #e3e3e3;
-      @media screen and (max-width: 768px) {
-        display: block;
-        width: 100%;
-      }
+        color: #000;
+        padding: 10px 15px;
+        border-right: 1px solid #e3e3e3;
+        border-bottom: 1px solid #e3e3e3;
+        @media screen and (max-width: 768px) {
+            display: block;
+            width: 100%;
+        }
     }
   }
 
@@ -1475,7 +1523,9 @@ footer {
 .fa-pen { margin-right: 10px; font-size: 160%; }
 .fa-user { margin-right: 10px; font-size: 160%; }
 
-.marker { background: linear-gradient(transparent 70%, #fff100 70%); }
+.marker { background: linear-gradient(transparent 75%, #fff100 75%); }
+.marker_red { background:linear-gradient(transparent 75%, #ff9393 75%); }
+.marker_gr { background:linear-gradient(transparent 75%, #bfff7f 75%); }
 .bg_marker { font-size: 1.8rem;}
 
 
@@ -1741,8 +1791,29 @@ display: inline-block;
     transition: opacity 0.3s ease-in-out;
     z-index: 10;
     cursor:pointer;
-  }
+}
   
-  .scroll-to-top.visible {
-    opacity: 1;
-  }
+.scroll-to-top.visible {
+opacity: 1;
+}
+
+.search_form { display: flex; align-items: center; justify-content: center; }
+.search_txt {
+        border-radius: 5px 0 0 5px!important;
+    }
+.search_txt::placeholder {
+    font-size: 0.75em;
+    color: #ccc;
+}
+
+.search_bt {
+    padding: 10px 15px;
+    border: solid 1px $main-color;
+    background-color: $main-color;
+    color: #fff;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Helvetica Neue", Arial, Meiryo, sans-serif;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.ichiran_bt,.search_form_box { padding: 10px; }

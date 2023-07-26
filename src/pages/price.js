@@ -141,7 +141,7 @@ export default function price() {
             </table>
             </div>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="ドメイン・サーバー管理">
                     <tbody>
                         <tr>
@@ -172,7 +172,7 @@ export default function price() {
 
             <h3>HTML関連</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="サポート内での作業">
                     <tbody>
                         <tr>
@@ -221,7 +221,7 @@ export default function price() {
 
             <h3>画像関連</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="画像関連">
                     <tbody>
                         <tr>
@@ -250,7 +250,7 @@ export default function price() {
 
             <h3>デザイン</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="デザイン">
                     <tbody>
                         <tr>
@@ -294,7 +294,7 @@ export default function price() {
 
             <h3>動画関連</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="動画関連">
                     <tbody>
                         <tr>
@@ -328,7 +328,7 @@ export default function price() {
 
             <h3>ドメイン・サーバー関連</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="ドメイン・サーバー関連">
                     <tbody>
                         <tr>
@@ -377,7 +377,7 @@ export default function price() {
 
             <h3>CGI・ASP関連</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="CGI・ASP関連">
                     <tbody>
                         <tr>
@@ -426,7 +426,7 @@ export default function price() {
 
             <h3>その他</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="その他">
                     <tbody>
                         <tr>
@@ -450,7 +450,7 @@ export default function price() {
 
             <h3>面談・リモート</h3>
 
-            <div class="slidetable">
+            <div className="slidetable">
                 <table className="price-list" summary="面談">
                     <tbody>
                         <tr>
