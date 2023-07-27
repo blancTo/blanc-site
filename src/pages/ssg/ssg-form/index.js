@@ -70,12 +70,7 @@ export default function index() {
                         <tr>
                             <th>ホームページURL<span className="must">必須</span></th>
                             <td><input type="url" data-type="url" name="ホームページURL" size={60} required="required" /></td>
-                        </tr>
-                        <tr>
-                            <th>対策キーワード<span className="must">必須</span><br />
-                            ※2～3個まで</th>
-                            <td><textarea name="対策キーワード" rows={5} cols={10} required="required" defaultValue={""} /></td>
-                        </tr>
+                        </tr>                        
                         <tr>
                             <th>備考</th>
                             <td><textarea name="備考" rows={10} cols={10} defaultValue={""} /></td>
@@ -84,7 +79,7 @@ export default function index() {
                 </table>
 
                 <p className="center">
-                    <button type="submit" className="bt02">お申込み</button>&nbsp;&nbsp;<button type="reset" className="bt02">リセット</button>
+                    <button type="submit" className="bt02">送信する</button>&nbsp;&nbsp;<button type="reset" className="bt02">リセット</button>
                 </p>
 
             </form>
