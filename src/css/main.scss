@@ -986,6 +986,13 @@ footer {
                 @media screen and (max-width:1024px){
                     padding: 15px;
                 }
+                ol { 
+                    margin: 30px 0 30px 30px;
+                    li {
+                        list-style-type: decimal;
+                        margin-bottom: 15px;
+                    }
+                }
             }
         }
     }
