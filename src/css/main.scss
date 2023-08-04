@@ -1168,7 +1168,24 @@ footer {
     img { margin: 20px auto; }
 }
 
-.post_body { margin-bottom: 4rem;}
+.post_body {
+    margin-bottom: 4rem;
+    code {
+        word-wrap: normal;
+        background: none;
+        color: #ccc;
+        font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+        font-size: 1em;
+        -webkit-hyphens: none;
+        hyphens: none;
+        line-height: 1.5;
+        tab-size: 4;
+        text-align: left;
+        white-space: pre;
+        word-break: normal;
+        word-spacing: normal;
+    }
+}
 
 .koushin_naiyo { width: 100%; background: #eaf5fc; margin: 10px auto; border-radius: 10px; padding: 3%; }
 
