@@ -1170,13 +1170,11 @@ footer {
 
 .post_body {
     margin-bottom: 4rem;
-    code {
+    .code_block {
         word-wrap: normal;
-        background: none;
         color: #ccc;
         font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
         font-size: 1em;
-        -webkit-hyphens: none;
         hyphens: none;
         line-height: 1.5;
         tab-size: 4;
@@ -1184,6 +1182,11 @@ footer {
         white-space: pre;
         word-break: normal;
         word-spacing: normal;
+        padding: 15px;
+        background-color: #333;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 15px 0;
     }
 }
 
