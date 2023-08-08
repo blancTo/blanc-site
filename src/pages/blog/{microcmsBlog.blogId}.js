@@ -83,7 +83,7 @@ export default function BlogPage({data}) {
 
 export const Head = ({data}) => (
     <>
-        <Seo title2={data.microcmsBlog.title + 'ここに内容'} />
+        <Seo title2={data.microcmsBlog.title} />
     </>
 )
 
