@@ -130,7 +130,7 @@ export default function index() {
             <li><FontAwesomeIcon icon={faCheck} /><a href="/renewal">ホームページリニューアル</a></li>
             <li><FontAwesomeIcon icon={faCheck} /><a href="/responsive">スマホ対応（レシポンシブ化）</a></li>
             <li><FontAwesomeIcon icon={faCheck} /><a href="/region-seo">SEO対策</a></li>
-            <li><FontAwesomeIcon icon={faCheck} /><a href="/recommendation_ssl">常時SSL対応</a></li>
+            <li><FontAwesomeIcon icon={faCheck} /><a href="/recommendation-ssl">常時SSL対応</a></li>
             <li><FontAwesomeIcon icon={faCheck} />ホームページの引っ越し</li>
             <li><FontAwesomeIcon icon={faCheck} />地図や住所の変更</li>
             <li><FontAwesomeIcon icon={faCheck} />ショッピングカートの設置</li>
