@@ -23,7 +23,7 @@ export default function ResponsiveJirei() {
                     <meta itemProp="position" content="1" />
                 </li>
                 <li>
-                    <a href="responsive/" itemProp="item">
+                    <a href="/responsive" itemProp="item">
                         <span>スマホ化・レスポンシブ対応</span>
                     </a>
                     <meta itemProp="position" content="2" />

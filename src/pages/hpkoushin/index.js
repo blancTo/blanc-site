@@ -165,7 +165,7 @@ export default function index() {
       <ul className="list_voice">
             <li><FontAwesomeIcon icon={faUser} />Q: 修正・更新の依頼をする際の流れは？<br />
             A: まず、お問い合わせフォームまたは電話でご連絡いただき、具体的な修正・更新内容をお知らせください。その後、弊社からお見積もりを提出し、ご了承いただいたら作業を開始いたします。</li>
-            <li><FontAwesomeIcon icon={faUser} />修正・更新にかかる時間はどれくらいですか？<br />
+            <li><FontAwesomeIcon icon={faUser} />Q: 修正・更新にかかる時間はどれくらいですか？<br />
             A: 修正・更新の内容によりますが、一般的にはテキスト修正や写真の差し替えは即日〜数日、ページの追加や大規模な修正は1週間〜となります。</li>
             <li><FontAwesomeIcon icon={faUser} />Q: 他社で作成したホームページでも修正・更新は可能ですか？<br />
             A: はい、他社で作成されたホームページでも修正・更新は承っております。詳細はお問い合わせください。</li>
