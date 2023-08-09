@@ -41,10 +41,10 @@ export default function index() {
       
       <div className="list03">
         <ul>
+            <li><FontAwesomeIcon icon={faCheck} />ホームページを作ってもらった人に連絡がとれない。</li>
+            <li><FontAwesomeIcon icon={faCheck} />ホームページ担当者が急にやめてしまった！</li>
             <li><FontAwesomeIcon icon={faCheck} />せっかく作ったホームページなのに、忙しくて更新できない。</li>
             <li><FontAwesomeIcon icon={faCheck} />ホームページ修正作業に手が回らない。</li>
-            <li><FontAwesomeIcon icon={faCheck} />ホームページ担当者が急にやめてしまった！</li>
-            <li><FontAwesomeIcon icon={faCheck} />ホームページを作ってもらった人に連絡がとれない。</li>
         </ul>
       </div>
 
@@ -63,11 +63,11 @@ export default function index() {
 
         <h4>そんな時はblancの<strong>ホームページ修正・更新サービスへ！</strong></h4>
 
-      <p className='mtb20'>延べ500社以上のホームページ作成や更新に携わってきた実績でちょっとしたホームページの修正作業をお気軽にご依頼頂けます。もちろんワードプレス（wordpress）や楽天ショップなどにも対応可能です。</p>
+      <p className='mtb20'>延べ800社を超えるホームページの制作・更新の経験を持つ私たちに、修正や更新のご要望をお知らせください。もちろん、ワードプレスや楽天などのECサイトも対応可能です。</p>
 
         <div className="koushin_naiyo">        
             <p className="bold txt30 blue">こんなお悩みなら、blancへお任せください！</p>
-            <p className="larger bold mar-bot0">基本料金<span className="dark-red">5,500円～</span>でホームページ修正致します。</p>
+            <p className="larger bold mar-bot0">基本料金<span className="dark-red">5,500円～</span>でホームページを修正・変更致します。</p>
             <p className="mt0">※テキストの修正は基本料金に含まれています。</p>
             <p className="txt30 bold">主な作業料金</p>
             <div className="koushin_cont">
