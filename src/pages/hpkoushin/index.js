@@ -156,13 +156,28 @@ export default function index() {
             ありがとうございます。<br />
             今後も動画の埋め込みや細かい修正、ページの新設などお願いすることもあるかと思いますので、その際にも是非お力添えをお願いできましたら幸いです。埼玉県　S様</li>
       </ul>
-      
-      <h4>即日対応</h4>
 
-      <p>新着情報やお知らせなど部分的な文章の変更や写真の差し替えなどでしたら即日対応も可能です。<br />
-      つぎのお問い合わせボタンよりお気軽にご連絡下さい。お急ぎの方はフリーダイアル <span className="red">0120-781-437</span> で受け付けております。</p>
-      
-      <h3>お問い合わせはこちら</h3>
+      <p className="center"><img src="/images/img_call.png" alt="" /></p>
+      <p className="center"><Link to="/hpkoushin/toiawase/"><img src="/images/contact_bt.png" alt="メールでのお申し込みはこちら" width={760} height={114} /></Link></p>
+
+      <h4>よくある質問</h4>
+
+      <ul className="list_voice">
+            <li><FontAwesomeIcon icon={faUser} />Q: 修正・更新の依頼をする際の流れは？<br />
+            A: まず、お問い合わせフォームまたは電話でご連絡いただき、具体的な修正・更新内容をお知らせください。その後、弊社からお見積もりを提出し、ご了承いただいたら作業を開始いたします。</li>
+            <li><FontAwesomeIcon icon={faUser} />修正・更新にかかる時間はどれくらいですか？<br />
+            A: 修正・更新の内容によりますが、一般的にはテキスト修正や写真の差し替えは即日〜数日、ページの追加や大規模な修正は1週間〜となります。</li>
+            <li><FontAwesomeIcon icon={faUser} />Q: 他社で作成したホームページでも修正・更新は可能ですか？<br />
+            A: はい、他社で作成されたホームページでも修正・更新は承っております。詳細はお問い合わせください。</li>
+            <li><FontAwesomeIcon icon={faUser} />Q: 修正・更新の料金はどのように決まりますか？<br />
+            A: 料金は修正・更新の内容や作業時間によって異なります。具体的な料金はお見積もり時にお知らせいたします。</li>
+            <li><FontAwesomeIcon icon={faUser} />Q: 修正・更新後のアフターサポートはありますか？<br />
+            A: はい、修正・更新後に発生した問題や不具合に関しては、一定期間無料でサポートいたします。</li>
+            <li><FontAwesomeIcon icon={faUser} />SEO対策も一緒に依頼することはできますか？<br />
+            A: はい、SEO対策も同時に依頼することが可能です。詳しくはお問い合わせください。</li>
+            <li><FontAwesomeIcon icon={faUser} />Q: ホームページのバックアップは取ってくれますか？<br />
+            A: はい、作業前にホームページのバックアップを取ることが一般的です。安心してご依頼ください。</li>
+      </ul>
 
       <p className="center"><img src="/images/img_call.png" alt="" /></p>
       <p className="center"><Link to="/hpkoushin/toiawase/"><img src="/images/contact_bt.png" alt="メールでのお申し込みはこちら" width={760} height={114} /></Link></p>
