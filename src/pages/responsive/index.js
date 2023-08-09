@@ -158,7 +158,7 @@ export default function index() {
                     <h3>モバイルフレンドリーテスト</h3>
 
                     <p>Googleもホームページがスマホ対応しているかどうかを判定するツールを提供しているので確認してみる事をおすすめします。</p>
-                    <p style="text-aligin: center"><a href="https://www.google.com/webmasters/tools/mobile-friendly/" target="_blank" rel="noopener noreferrer"><span class ="bt_link">モバイルフレンドリーテスト</span></a></p>
+                    <p><a href="https://www.google.com/webmasters/tools/mobile-friendly/" target="_blank" rel="noopener noreferrer"><span class ="bt_link">モバイルフレンドリーテスト</span></a></p>
                     <p>このテストを利用することで、ユーザーがスマートフォンやタブレットでページにアクセスした際の体験を向上させるための具体的な提案や指示を得ることができます。</p>
                     <p>使用方法は非常にシンプルです。テストしたいウェブページのURLを入力し、評価を開始するだけ。数分以内に結果が表示され、ページがモバイルフレンドリーであるか、あるいは改善点や問題点がある場合はそれらの詳細を確認することができます。</p>
 
