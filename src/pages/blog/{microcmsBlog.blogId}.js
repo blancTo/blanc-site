@@ -33,6 +33,9 @@ export default function BlogPage({data}) {
 
     const body = data.microcmsBlog.body    
     const headings = extractHeadings(body) || [];
+
+    
+
     return (
         <>
         <Header />
@@ -81,11 +84,24 @@ export default function BlogPage({data}) {
     )
 }
 
-export const Head = ({data}) => (
-    <>
-        <Seo title2={data.microcmsBlog.title} description={`${data.microcmsBlog.title} | ホームページ修正・作成の有限会社blanc`}/>    
-    </>
-)
+export const Head = ({data}) => {
+
+    const maxTextLength = 80;
+
+    const body = data.microcmsBlog.body;
+    const truncatedBody = body.replace(/<[^>]+>/g, '');
+    const limitedBody = truncatedBody.length > maxTextLength
+        ? truncatedBody.slice(0, maxTextLength) + '...'
+        : truncatedBody;
+
+        return (
+            <>
+                <Seo title2={data.microcmsBlog.title} description={limitedBody}/>
+            </>
+        );
+    
+    
+}
 
 export const query = graphql`
 query($id: String) {

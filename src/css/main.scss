@@ -1841,3 +1841,30 @@ opacity: 1;
 }
 
 .ichiran_bt,.search_form_box { padding: 10px; }
+
+.faq_box dt {
+    margin-bottom: 1em;
+    color: #333333;
+    font-weight: 600;
+}
+
+.faq_box dt::before,
+.faq_box dd::before {
+    margin-right: .4em;
+}
+
+.faq_box dt::before {
+    content: "Q.";
+}
+
+.faq_box dd {
+    margin: 0 0 2.5em;
+    padding: 1.5rem 2rem 1.5rem 4rem;
+    background-color: #f2f2f2;
+    color: #333333;
+}
+
+.faq_box dd::before {
+    content: "A.";
+    margin-left: -22px;
+}
