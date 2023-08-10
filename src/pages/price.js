@@ -489,6 +489,6 @@ export default function price() {
 
 export const Head = () => (
     <>
-        <Seo title="ホームページ修正・保守料金表" />
+        <Seo title2="ホームページ修正費用・保守料金表" description="ホームページ修正費用の詳細はこちら。ホームページの維持管理からSEO対策、ドメイン・サーバー管理まで、blancのホームページ修正費用とサービス内容を一覧でご案内。"/>
     </>
 )
