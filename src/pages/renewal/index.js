@@ -110,13 +110,12 @@ const RenewalIndex = ({data}) => {
                 </ul>
             </div>
 
-            <h3>blancサポート・スタンダード</h3>
+            <h3>blancサポート・ベーシック</h3>
             <div className="list01">
                 <ul>
                     <li>
                         <span className='bg_marker'><FontAwesomeIcon icon={faPen} />面倒なホームページの更新や修正も月3回～ご依頼頂けます。</span><br />
-                        <span className='txt14'>※<Link to="/price/">blancサポート・スタンダード</Link>が月額5,000円＋税（弊社でホームページ制作を行って頂いた方のみ。）</span><br />
-                        <span className='txt14'>※<Link to="/price/">blancサポート・スタンダード</Link>（ドメイン・サーバー維持費、サイト更新作業、SEO対策）</span>
+                        <span className='txt14'>※<Link to="/price/">blancサポート・ベーシック</Link>が月額5,000円＋税（弊社でホームページ制作を行って頂いた方のみ。）</span>
                     </li>
                 </ul>
             </div>
