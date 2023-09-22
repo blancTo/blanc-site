@@ -93,6 +93,9 @@ export default function index() {
         <h3>お客様の声</h3>
         
         <ul className="list_voice">
+            <li><FontAwesomeIcon icon={faUser} />お願いした4つのキーワードのうち3つがトップ3にランクインしました。<br />
+            お陰様で、この順位は開業以来初めての快挙です！本当にありがとうございます。<br />
+            埼玉県　A様</li>
             <li><FontAwesomeIcon icon={faUser} />検索順位が2ページ目でなかなか順位が安定せずに困っていました。<br />
             今はお願いしたキーワード2つとも3位以内に入っています！<br />
             東京都　S様</li>
