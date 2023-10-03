@@ -14,8 +14,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。",
-    keyword:"ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ",
+    title:
+      "ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。",
+    keyword:
+      "ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ",
     description:
       "地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。",
     image: "/images/blanc_ogp.jpg",
@@ -23,9 +25,8 @@ module.exports = {
     siteUrl: "https://www.blanc.to",
   },
   plugins: [
-        
     `gatsby-plugin-sass`,
-    'gatsby-plugin-smoothscroll',
+    "gatsby-plugin-smoothscroll",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -43,8 +44,7 @@ module.exports = {
         ],
       },
     },
-    
-    
+
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -56,16 +56,16 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     {
-      resolve: 'gatsby-source-microcms',
+      resolve: "gatsby-source-microcms",
       options: {
         apiKey: process.env.API_KEY,
-        serviceId: 'blanc-site',
+        serviceId: "blanc-site",
         apis: [
           {
-            endpoint: 'portfolio',
+            endpoint: "portfolio",
           },
           {
-            endpoint: 'category',
+            endpoint: "category",
           },
           {
             endpoint: "blog",
@@ -73,18 +73,18 @@ module.exports = {
         ],
       },
     },
-    
+
     {
-      resolve: 'gatsby-plugin-htaccess',
+      resolve: "gatsby-plugin-htaccess",
       options: {
-        RewriteBase: '/',
+        RewriteBase: "/",
         https: true,
         www: true,
         SymLinksIfOwnerMatch: true,
-        host: 'www.blanc.to', // if 'www' is set to 'false', be sure to also remove it here!
+        host: "www.blanc.to", // if 'www' is set to 'false', be sure to also remove it here!
         ErrorDocument: `          
           ErrorDocument 404 /error_pages/404.html
-        `,        
+        `,
         custom: `            
             RewriteRule ^recommendation_ssl/(.*)$ https://www.blanc.to/recommendation-ssl/$1 [L,R=301]
             RewriteRule ^kaijyo_form/(.*)$ https://www.blanc.to/kaijyo-form/$1 [L,R=301]
@@ -121,7 +121,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://www.blanc.to`,
-        sitemap: `https://www.blanc.to/sitemap-0.xml`,
+        sitemap: `https://www.blanc.to/sitemap.xml`,
         policy: [{ userAgent: `*`, allow: `/` }],
       },
     },
@@ -160,6 +160,5 @@ module.exports = {
         // 詳細な設定は公式ドキュメントを参照してください。
       },
     },
-    
   ],
-}
+};
