@@ -116,29 +116,20 @@ module.exports = {
         siteUrl: `https://www.blanc.to/`,
       },
     },
-    `gatsby-plugin-sitemap`,
+
     {
-      resolve: `gatsby-plugin-robots-txt`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-        host: `https://www.blanc.to`,
-        sitemap: `https://www.blanc.to/sitemap.xml`,
-        policy: [{ userAgent: `*`, allow: `/` }],
+        output: `/sitemap.xml`,
+        trailingSlash: true,
       },
     },
     {
-      resolve: `gatsby-plugin-netlify`,
+      resolve: `gatsby-plugin-robots-txt`,
       options: {
-        headers: {
-          "/*.html": ["Cache-Control: public, max-age=0, must-revalidate"],
-          "/page-data/*": ["Cache-Control: public, max-age=0, must-revalidate"],
-          "/page-data/app-data.json": [
-            "Cache-Control: public, max-age=0, must-revalidate",
-          ],
-          "/static/*": ["Cache-Control: public, max-age=31536000, immutable"],
-          "/sw.js": ["Cache-Control: no-cache"],
-          "/**/*.js": ["Cache-Control: public, max-age=31536000, immutable"],
-          "/**/*.css": ["Cache-Control: public, max-age=31536000, immutable"],
-        },
+        host: "https://www.blanc.to", // サイトのベースURLを指定
+        sitemap: "https://www.blanc.to/sitemap.xml", // サイトマップのURLを指定
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
 
