@@ -116,18 +116,12 @@ module.exports = {
         siteUrl: `https://www.blanc.to/`,
       },
     },
-
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-      },
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: "https://www.blanc.to", // サイトのベースURLを指定
-        sitemap: "https://www.blanc.to/sitemap.xml", // サイトマップのURLを指定
+        sitemap: "https://www.blanc.to/sitemap-index.xml", // サイトマップのURLを指定
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
