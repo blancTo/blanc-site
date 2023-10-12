@@ -1,17 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Seo from "../../components/Seo";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 
 const Thanks = () => {
-  useEffect(() => {
-    // Google Ads コンバージョンイベントを発生させる
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "conversion", {
-        send_to: "AW-1071175443/pRT4CNj53_sCEJOu4_4D",
-      });
-    }
-  }, []);
   return (
     <>
       <Header />
