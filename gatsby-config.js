@@ -103,10 +103,10 @@ module.exports = {
       options: {
         trackingIds: ["G-8NELV8F9BR", "AW-1071175443"],
         pluginConfig: {
-          head: true,
+          head: true, //head内に設置する設定
         },
         gtagConfig: {
-          send_page_view: true,
+          send_page_view: true, //ユーザが来た時に自動的に送信されるページビューのトラッキングイベント
         },
       },
     },
