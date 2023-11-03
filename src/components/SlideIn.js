@@ -7,6 +7,7 @@ import { Link } from 'gatsby';
 const SlideIn = () => {
   const [isVisible, setIsVisible] = useState(false);
   const scrollThreshold = 300; // スクロールしきい値（ピクセル単位）
+  const isMobile = typeof window !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -23,8 +24,6 @@ const SlideIn = () => {
       setIsVisible(false);
     }
   };
-
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   return (
     <>

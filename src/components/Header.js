@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const Header = () => {
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const isMobile = typeof window !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   return (
     <>
       <header id='header'>

@@ -13,7 +13,7 @@ import SlideIn from '../components/SlideIn';
 export default function index({ data }) {
   const blogsPC = data.blogPC.edges;
   const blogsSmp = data.blogSmp.edges;
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const isMobile = typeof window !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   const portfolios = data.portfolio.edges;
   return (
     <>
