@@ -522,6 +522,12 @@ footer {
     @media screen and (max-width: 1280px) {
       padding: 3% 0;
     }
+    @media not screen and (min-width: 1025px) {
+      margin-bottom: 65px;
+    }
+    @media not screen and (min-width: 769px) {
+      margin-bottom: 48px;
+    }
     .foot_link {
       display: flex;
       flex-wrap: wrap;
@@ -738,10 +744,11 @@ footer {
   width: 1080px;
   margin: 0 auto;
   @media not screen and (min-width: 1025px) {
-    width: 90%;
+    width: 95%;
   }
   @media screen and (max-width: 900px) {
-    width: 90%;
+    width: 100%;
+    padding: 15px;
   }
 }
 
@@ -835,10 +842,10 @@ footer {
     width: 70%;
     padding-right: 3%;
     text-align: justify;
-    @media screen and (max-width: 768px) {
+    @media not screen and (min-width: 769px) {
       width: calc(100% / 1);
     }
-    @media screen and (max-width: 480px) {
+    @media not screen and (min-width: 701px) {
       width: 100%;
     }
     h2 {
@@ -855,10 +862,11 @@ footer {
   }
   .about_r {
     width: 30%;
-    @media screen and (max-width: 768px) {
-      width: calc(100% / 1);
+    @media not screen and (min-width: 769px) {
+      width: 60%;
+      margin: 0 auto;
     }
-    @media screen and (max-width: 480px) {
+    @media not screen and (min-width: 701px) {
       width: 100%;
     }
   }
@@ -873,8 +881,12 @@ footer {
     flex-wrap: wrap;
   }
   .service_img {
-    @media screen and (max-width: 768px) {
+    @media not screen and (min-width: 769px) {
       width: 70%;
+      margin: 0 auto;
+    }
+    @media not screen and (min-width: 701px) {
+      width: 100%;
       margin: 0 auto;
     }
     h3 {
@@ -984,7 +996,7 @@ footer {
 #news {
   background-color: #f9f7f5;
   .main-content {
-    padding: 3% 0;
+    padding: 20px;
     h3 {
       font-weight: 900;
       text-align: center;
@@ -1195,6 +1207,9 @@ footer {
     }
     .main-content {
       width: initial;
+      @media not screen and (min-width: 1025px) {
+        padding: 20px;
+      }
       h2 {
         font-size: 2.4rem;
       }
@@ -1202,9 +1217,6 @@ footer {
         font-size: 2rem;
       }
       .post_body {
-        @media screen and (max-width: 1024px) {
-          padding: 15px;
-        }
         ol {
           margin: 30px 0 30px 30px;
           li {
@@ -1335,6 +1347,9 @@ footer {
 #subpage {
   .main-content {
     padding: 20px 0;
+    @media not screen and (min-width: 1025px) {
+      padding: 20px;
+    }
     h1 {
       font-weight: 900;
       font-size: 3rem;
@@ -2253,9 +2268,19 @@ a:hover span.bt_link {
 .scroll-to-top {
   position: fixed;
   bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
+  right: -500px;
+  width: 50px;
+  height: 50px;
+  @media not screen and (min-width: 1025px) {
+    width: 60px;
+    height: 60px;
+    bottom: 68px;
+  }
+  @media not screen and (min-width: 768px) {
+    bottom: 55px;
+    width: 40px;
+    height: 40px;
+  }
   background-color: #000;
   color: #fff;
   border: none;
@@ -2271,6 +2296,49 @@ a:hover span.bt_link {
 
 .scroll-to-top.visible {
   opacity: 1;
+  right: 0;
+}
+
+.scroll-line {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  bottom: 0;
+  right: -500px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  @media not screen and (min-width: 1025px) {
+    width: 60px;
+    height: 60px;
+    bottom: 68px;
+  }
+  @media not screen and (min-width: 768px) {
+    bottom: 55px;
+    width: 40px;
+    height: 40px;
+  }
+  z-index: 1;
+  background-color: #00b900;
+  transition: opacity 0.3s ease-in-out;
+  &.visible {
+    opacity: 1;
+    right: 55px;
+    @media not screen and (min-width: 1025px) {
+      right: 65px;
+    }
+    @media not screen and (min-width: 768px) {
+      right: 45px;
+    }
+  }
 }
 
 .search_form {
@@ -2326,4 +2394,52 @@ a:hover span.bt_link {
 .faq_box dd::before {
   content: 'A.';
   margin-left: -22px;
+}
+
+.foot-nav {
+  position: fixed;
+  right: -1200px; /* スライドイン前の位置 */
+  bottom: 0;
+  transition: right 0.3s ease-in-out;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  li {
+    width: calc((100% - 5px * 1) / 2);
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      font-size: 2.4rem;
+    }
+    &.mail {
+      a {
+        background-color: #0057b8;
+        padding: 10px;
+        display: block;
+        color: #fff;
+        font-weight: 600;
+        .fa-envelope {
+          margin-right: 5px;
+        }
+      }
+    }
+    &.tel {
+      a {
+        background-color: #fff361;
+        padding: 10px;
+        display: block;
+        color: #000;
+        font-weight: 600;
+        .fa-phone {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.foot-nav.visible {
+  right: 0; /* スライドイン後の位置 */
+  bottom: 0;
 }
