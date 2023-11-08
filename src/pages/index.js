@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Link, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -10,11 +11,14 @@ import Footer from '../components/Footer';
 import PageTop from '../components/PageTop';
 import SlideIn from '../components/SlideIn';
 
-export default function index({ data }) {
-  const blogsPC = data.blogPC.edges;
-  const blogsSmp = data.blogSmp.edges;
+const index = ({ data }) => {
+  const blogsPC = data.blogPC ? data.blogPC.edges : [];
+  const blogsSmp = data.blogSmp ? data.blogSmp.edges : [];
   const isMobile = typeof window !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   const portfolios = data.portfolio.edges;
+  // ランダムな20件のポートフォリオを選択
+  const randomPortfolios = [...portfolios].sort(() => 0.5 - Math.random()).slice(0, 8);
   return (
     <>
       <PageTop />
@@ -75,25 +79,35 @@ export default function index({ data }) {
           </div>
         </section>
 
-        <Service />
+        <section id='service'>
+          <div className='main-content'>
+            <p className='sub-title'>
+              <span>Service</span> サービス
+            </p>
+
+            <Service />
+          </div>
+        </section>
 
         <section id='works'>
           <div className='main-content'>
             <p className='sub-title'>
               <span>Works</span> 製作実績
             </p>
+
             <div className='flex-wrap'>
-              {portfolios.map(({ node }) => (
-                <div className='works_box' key={node.portfolioId}>
-                  <Link to={'/portfolio/' + node.portfolioId + '/'}>
+              {randomPortfolios.map(({ node }) => (
+                <div className='works_box' key={node.id}>
+                  <Link href={'/portfolio/' + node.portfolioId + '/'} className='works_img'>
                     <img src={node.eyecatch.url + '?fm=webp'} width={370} height={277} alt={node.title + 'サムネイル画像'} loading='lazy' />
                   </Link>
-                  <Link to={'/portfolio/' + node.portfolioId + '/'}>
-                    <span>{node.title}</span>
-                  </Link>
+                  <p>
+                    <Link href={'/portfolio/' + node.portfolioId + '/'}>{node.title}</Link>
+                  </p>
                 </div>
               ))}
             </div>
+
             <p className='center'>
               <Link to='/portfolio/' className='bt01'>
                 製作実績はこちら
@@ -146,7 +160,7 @@ export default function index({ data }) {
       <Footer />
     </>
   );
-}
+};
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -249,7 +263,7 @@ export const query = graphql`
       }
     }
 
-    portfolio: allMicrocmsPortfolio(limit: 8, sort: { date: DESC }) {
+    portfolio: allMicrocmsPortfolio {
       edges {
         node {
           eyecatch {
@@ -263,3 +277,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default index;

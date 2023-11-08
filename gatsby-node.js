@@ -1,26 +1,26 @@
-const path = require("path");
+const path = require('path');
 
-exports.createPages = ({ actions,graphql  }) => {  
+exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogTemplate = path.resolve('src/templates/blog-page.js');
   const PortfolioTemplate = path.resolve('src/templates/Portfolio-page.js');
 
   const blogs = graphql(
     `
-    {
-      allMicrocmsBlog {
-        totalCount
+      {
+        allMicrocmsBlog {
+          totalCount
+        }
       }
-    }
     `
-  ).then(result => {
-    if (result.errors) {      
-        Promise.reject (result.errors);      
+  ).then((result) => {
+    if (result.errors) {
+      Promise.reject(result.errors);
     }
 
-    const PerPage = 10
-    const pageCount = Math.ceil(result.data.allMicrocmsBlog.totalCount / PerPage)
-  
+    const PerPage = 10;
+    const pageCount = Math.ceil(result.data.allMicrocmsBlog.totalCount / PerPage);
+
     for (let i = 0; i < pageCount; i++) {
       createPage({
         path: `/blog/page/${i + 1}`,
@@ -29,9 +29,8 @@ exports.createPages = ({ actions,graphql  }) => {
           limit: PerPage,
           skip: i * PerPage,
         },
-      })
+      });
     }
-
   });
 
   const Portfolios = graphql(
@@ -42,14 +41,14 @@ exports.createPages = ({ actions,graphql  }) => {
         }
       }
     `
-  ).then(result => {
-    if (result.errors) {      
-        Promise.reject (result.errors);      
+  ).then((result) => {
+    if (result.errors) {
+      Promise.reject(result.errors);
     }
 
-    const PerPage = 16
-    const pageCount = Math.ceil(result.data.allMicrocmsPortfolio.totalCount / PerPage)
-  
+    const PerPage = 16;
+    const pageCount = Math.ceil(result.data.allMicrocmsPortfolio.totalCount / PerPage);
+
     for (let i = 0; i < pageCount; i++) {
       createPage({
         path: `/Portfolio/page/${i + 1}`,
@@ -58,12 +57,9 @@ exports.createPages = ({ actions,graphql  }) => {
           limit: PerPage,
           skip: i * PerPage,
         },
-      })
+      });
     }
-
   });
-  
 
   return Promise.all([blogs, Portfolios]);
-
-}
+};
