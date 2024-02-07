@@ -40,9 +40,8 @@ const RenewalIndex = ({ data }) => {
       <Layout slug='renewal'>
         <h2>
           ホームページ作成198,000円
-          <br />
-          （スマホ・常時SSL・ワードプレスにも対応）
         </h2>
+        <h3>スマホ・常時SSL・ワードプレスにも対応</h3>
 
         <div className='flex-wrap'>
           {randomPortfolios.map(({ node }) => (
@@ -87,7 +86,7 @@ const RenewalIndex = ({ data }) => {
         </div>
 
         <h3>
-          制作費用　<span className='red bold txt38'>198,000</span>円（税込）～（10ページ以内）
+          制作費用　<span className='red bold txt38'>198,000</span>円（税込）（5ページ以内）
         </h3>
 
         <div className='list03'>
@@ -106,11 +105,11 @@ const RenewalIndex = ({ data }) => {
             </li>
             <li>
               <FontAwesomeIcon icon={faCheck} />
-              10ページを超える場合は別途お見積り。
+              5ページを超える場合は別途お見積り。
             </li>
             <li>
               <FontAwesomeIcon icon={faCheck} />
-              標準的な問い合わせフォーム1個設置。
+              一般的な問い合わせフォーム1個設置。ページ数含みません。
             </li>
           </ul>
         </div>
@@ -179,7 +178,7 @@ const RenewalIndex = ({ data }) => {
           </ul>
         </div>
 
-        <h3>blancサポート・ベーシック</h3>
+        <h3>blancサポート・ベーシックの割引</h3>
         <div className='list01'>
           <ul>
             <li>
@@ -190,6 +189,7 @@ const RenewalIndex = ({ data }) => {
               <br />
               <span className='txt14'>
                 ※<Link to='/price/'>blancサポート・ベーシック</Link>が月額5,000円＋税（弊社でホームページ制作を行って頂いた方のみ。）
+                ※blancサポートが不要な場合はそのままの価格でのご提供。
               </span>
             </li>
           </ul>
@@ -202,6 +202,7 @@ const RenewalIndex = ({ data }) => {
               <span className='bg_marker'>
                 <FontAwesomeIcon icon={faPen} />
                 ホームページ作成後もわからいない事や集客方法までサポートします。
+                blancサポートご加入の方のみ。
               </span>
             </li>
           </ul>
@@ -220,7 +221,7 @@ const RenewalIndex = ({ data }) => {
               </div>
               <div className='title'>
                 <h3>お問い合わせ</h3>
-                <p>まずはお電話頂くか、HPからお問い合わせフォームを送って下さい。</p>
+                <p>お電話頂くか、HPからお問い合わせフォームを送って下さい。</p>
               </div>
             </div>
             <span className='stepline' />
