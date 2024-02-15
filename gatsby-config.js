@@ -14,12 +14,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title:
-      "ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。",
-    keyword:
-      "ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ",
-    description:
-      "地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。",
+    title: "ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。",
+    keyword: "ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ",
+    description: "地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。",
     image: "/images/blanc_ogp.jpg",
     url: "https://www.blanc.to",
     siteUrl: "https://www.blanc.to",
@@ -86,8 +83,9 @@ module.exports = {
           ErrorDocument 404 /error_pages/404.html
         `,
         custom: `            
-            RewriteRule ^recommendation_ssl/(.*)$ https://www.blanc.to/recommendation-ssl/$1 [L,R=301]
-            RewriteRule ^kaijyo_form/(.*)$ https://www.blanc.to/kaijyo-form/$1 [L,R=301]
+        RewriteRule ^recommendation_ssl/(.*)$ https://www.blanc.to/recommendation-ssl/$1 [L,R=301]
+        RewriteRule ^kaijyo_form/(.*)$ https://www.blanc.to/kaijyo-form/$1 [L,R=301]
+        RewriteRule ^index.html$ https://www.blanc.to/ [L,R=301]
         `,
       },
     },
