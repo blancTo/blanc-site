@@ -114,7 +114,13 @@ module.exports = {
         siteUrl: `https://www.blanc.to/`,
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        entryLimit: 50000,
+        resolveSiteUrl: () => 'https://www.blanc.to',
+      },
+    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
