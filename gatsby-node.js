@@ -3,7 +3,7 @@ const path = require('path');
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogTemplate = path.resolve('src/templates/blog-page.js');
-  const PortfolioTemplate = path.resolve('src/templates/Portfolio-page.js');
+  const PortfolioTemplate = path.resolve('src/templates/portfolio-page.js');
 
   const blogs = graphql(
     `
@@ -51,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     for (let i = 0; i < pageCount; i++) {
       createPage({
-        path: `/Portfolio/page/${i + 1}`,
+        path: `/portfolio/page/${i + 1}`,
         component: PortfolioTemplate,
         context: {
           limit: PerPage,

@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Service from '../../components/Service';
 
-const Index = ({ data }) => {
+const PortfolioIndex = ({ data }) => {
   const portfolios = data.allMicrocmsPortfolio.edges;
   // ランダムな20件のポートフォリオを選択
   const randomPortfolios = [...portfolios].sort(() => 0.5 - Math.random()).slice(0, 20);
@@ -79,4 +79,4 @@ export const query = graphql`
   }
 `;
 
-export default Index;
+export default PortfolioIndex;

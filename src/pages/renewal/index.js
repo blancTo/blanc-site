@@ -38,9 +38,7 @@ const RenewalIndex = ({ data }) => {
       </div>
 
       <Layout slug='renewal'>
-        <h2>
-          ホームページ作成198,000円
-        </h2>
+        <h2>ホームページ作成198,000円</h2>
         <h3>スマホ・常時SSL・ワードプレスにも対応</h3>
 
         <div className='flex-wrap'>
@@ -188,8 +186,7 @@ const RenewalIndex = ({ data }) => {
               </span>
               <br />
               <span className='txt14'>
-                ※<Link to='/price/'>blancサポート・ベーシック</Link>が月額5,000円＋税（弊社でホームページ制作を行って頂いた方のみ。）
-                ※blancサポートが不要な場合はそのままの価格でのご提供。
+                ※<Link to='/price/'>blancサポート・ベーシック</Link>が月額5,000円＋税（弊社でホームページ制作を行って頂いた方のみ。） ※blancサポートが不要な場合はそのままの価格でのご提供。
               </span>
             </li>
           </ul>
@@ -201,8 +198,7 @@ const RenewalIndex = ({ data }) => {
             <li>
               <span className='bg_marker'>
                 <FontAwesomeIcon icon={faPen} />
-                ホームページ作成後もわからいない事や集客方法までサポートします。
-                blancサポートご加入の方のみ。
+                ホームページ作成後もわからいない事や集客方法までサポートします。 blancサポートご加入の方のみ。
               </span>
             </li>
           </ul>
