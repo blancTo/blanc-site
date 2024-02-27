@@ -148,5 +148,6 @@ module.exports = {
         // 詳細な設定は公式ドキュメントを参照してください。
       },
     },
+    'gatsby-plugin-netlify',
   ],
 };

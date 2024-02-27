@@ -64,3 +64,21 @@ exports.createPages = ({ actions, graphql }) => {
 
   return Promise.all([blogs, Portfolios]);
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+
+  return new Promise(resolve => {
+    const oldPage = Object.assign({}, page);
+    if (typeof page.path === 'string' && !page.path.endsWith('/')) {
+      page.path += '/';
+    }
+
+    if (page.path !== oldPage.path) {
+      deletePage(oldPage);
+      createPage(page);
+    }
+
+    resolve();
+  });
+};
