@@ -70,7 +70,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
   return new Promise(resolve => {
     const oldPage = Object.assign({}, page);
-    if (typeof page.path === 'string' && !page.path.endsWith('/')) {
+    if (page.path !== '/404.html' && typeof page.path === 'string' && !page.path.endsWith('/')) {
       page.path += '/';
     }
 
