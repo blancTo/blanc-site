@@ -86,6 +86,13 @@ module.exports = {
         RewriteRule ^recommendation_ssl/(.*)$ https://www.blanc.to/recommendation-ssl/$1 [L,R=301]
         RewriteRule ^kaijyo_form/(.*)$ https://www.blanc.to/kaijyo-form/$1 [L,R=301]
         RewriteRule ^index.html$ https://www.blanc.to/ [L,R=301]
+        RewriteCond %{QUERY_STRING} ^yclid=(.*)$
+        RewriteRule ^renewal/$ /renewal/? [R=301,L]
+        RewriteRule ^(.*)/$ /$1 [R=301,L]
+        RewriteRule ^blog/Right-Click-Hack/$ /blog/right-click-hack/ [R=301,L]
+        RewriteRule ^blog/Gmail-SPF/$ /blog/gmail-spf/ [R=301,L]
+        RewriteRule ^blog/Server-Change/$ /blog/server-change/ [R=301,L]
+        RewriteRule ^blog/Contact-Form-7/$ /blog/contact-form-7/ [R=301,L]
         `,
       },
     },
