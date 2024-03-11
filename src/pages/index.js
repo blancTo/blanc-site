@@ -11,6 +11,12 @@ import Footer from '../components/Footer';
 import PageTop from '../components/PageTop';
 import SlideIn from '../components/SlideIn';
 
+const pagemeta = {
+  title: `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトル
+  description: `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,//このページのディスクリプション
+  keyword: `ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ`,
+};
+
 const index = ({ data }) => {
   const blogsPC = data.blogPC ? data.blogPC.edges : [];
   const blogsSmp = data.blogSmp ? data.blogSmp.edges : [];
@@ -163,64 +169,40 @@ const index = ({ data }) => {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.blanc.to/#breadcrumblist',
-      itemListElement: [
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          '@type': 'ListItem',
-          '@id': 'https://www.blanc.to/#listItem',
-          position: 1,
-          item: {
-            '@type': 'WebPage',
-            '@id': 'https://www.blanc.to/',
-            name: 'ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。',
-            description: '地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。',
-            url: 'https://www.blanc.to/',
-          },
-          nextItem: 'https://www.blanc.to/#listItem',
-        },
-      ],
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://blanc.to/",
+            "name": "ホーム"
+          }
+        }
+      ]
     },
     {
-      '@type': 'Person',
-      '@id': 'https://www.blanc.to/#person',
-    },
-    {
-      '@type': 'WebPage',
-      '@id': 'https://www.blanc.to/#webpage',
-      url: 'https://www.blanc.to/',
-      name: 'ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。',
-      description: '地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。',
-      inLanguage: 'ja',
-      isPartOf: {
-        '@id': 'https://www.blanc.to/#website',
+      "@type": "WebSite",
+      "@id": "https://blanc.to/#website",
+      "url": "https://blanc.to",
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": "https://blanc.to"
       },
-      breadcrumb: {
-        '@id': 'https://www.blanc.to/#breadcrumblist',
-      },
-      datePublished: '2022-10-04T01:06:53+09:00',
-      dateModified: '2022-12-26T23:31:17+09:00',
-    },
-    {
-      '@type': 'WebSite',
-      '@id': 'https://www.blanc.to/#website',
-      url: 'https://www.blanc.to/',
-      name: 'ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。',
-      description: '地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。',
-      inLanguage: 'ja',
-      publisher: {
-        '@id': 'https://www.blanc.to/#person',
-      },
-    },
-  ],
+      "inLanguage": "ja"
+    }
+  ]
 };
 
 export const Head = () => (
   <>
-    <Seo title2='ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。' keyword='ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ' description='地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。' />
+    <Seo title2={pagemeta.title} description={pagemeta.description} keyword={pagemeta.keyword} />
     <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
   </>
 );

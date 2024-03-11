@@ -12,29 +12,91 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
+const pagemeta = {
+  title: `スマホ化・レスポンシブ対応 | ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトルタグに入る情報
+  subtitle: `スマホ化・レスポンシブ対応`,//メインイメージ部分のテキスト
+  description: `スマホ化でアクセスアップ！ スマホ化の流れ 最近のスマートフォン普及にはめざましいものがあります。 今やパソコンと同じようにスマホでネットを見るのが普通になっています。 そのためホームページへのアクセスも業種によっては、スマホ経由の方が多い状況となっています。`,//このページのディスクリプション
+  slug: `responsive`,//このページのslug
+};
+
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": `${siteurl}`,
+            "name": "ホーム"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": `${siteurl}/${pagemeta.slug}`,
+            "name": `${pagemeta.subtitle}`
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}/${pagemeta.slug}`,
+      "url": `${siteurl}/${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}/#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <body className={pagemeta.slug} />  
+    <Seo title2={pagemeta.title} description={pagemeta.description} article={true} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const ResponsivePage = () => {
   return (
     <>
       <Header />
 
       <div id='mainimage-sub'>
-        <h1>スマホ化・レスポンシブ対応</h1>
+        <h1>{pagemeta.subtitle}</h1>
         <p>Responsive</p>
       </div>
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <a href='https://www.blanc.to' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </a>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>スマホ化・レスポンシブ対応</span>
-            <meta itemProp='position' content='2' />
+            <a href='https://www.blanc.to/'>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
 
       <div id='content'>
         <div className='maincontent'>
@@ -214,8 +276,3 @@ const ResponsivePage = () => {
 
 export default ResponsivePage;
 
-export const Head = () => (
-  <>
-    <Seo title='スマホ化・レスポンシブ対応' description='スマホ化でアクセスアップ！ スマホ化の流れ 最近のスマートフォン普及にはめざましいものがあります。 今やパソコンと同じようにスマホでネットを見るのが普通になっています。 そのためホームページへのアクセスも業種によっては、スマホ経由の方が多い状況となっています。' article={true} />
-  </>
-);

@@ -8,30 +8,91 @@ import { faCheck, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'gatsby';
 
+const pagemeta = {
+  title: `地域と業種に特化したSEO対策 | blancのSEOで検索順位を上げる！`,//このページのタイトルタグに入る情報
+  subtitle: `SEO対策`,//メインイメージ部分のテキスト
+  description: `地域と業種に特化したSEO対策で、あなたのビジネスを検索結果の上位に！ホームページ作成からリニューアル、スマホ対応まで、あなたのビジネスをサポートします。`,//このページのディスクリプション
+  slug: `region-seo`,//このページのslug
+};
+
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": `${siteurl}`,
+            "name": "ホーム"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": `${siteurl}/${pagemeta.slug}`,
+            "name": `${pagemeta.subtitle}`
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}/${pagemeta.slug}`,
+      "url": `${siteurl}/${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}/#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <body className={pagemeta.slug} />  
+    <Seo title2={pagemeta.title} description={pagemeta.description} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const RegionSeo = () => {
   return (
     <>
       <Header />
 
       <div id='mainimage-sub'>
-        <h1>SEO対策</h1>
+        <h1>{pagemeta.subtitle}</h1>
         <p>SEO Service</p>
       </div>
 
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <Link to='/' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </Link>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>SEO対策</span>
-            <meta itemProp='position' content='2' />
+            <a href='https://www.blanc.to/'>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
 
       <Layout>
         <h2>SEO対策依頼</h2>
@@ -191,9 +252,3 @@ const RegionSeo = () => {
 };
 
 export default RegionSeo;
-
-export const Head = () => (
-  <>
-    <Seo title2='地域と業種に特化したSEO対策 | blancのSEOで検索順位を上げる！' description='地域と業種に特化したSEO対策で、あなたのビジネスを検索結果の上位に！ホームページ作成からリニューアル、スマホ対応まで、あなたのビジネスをサポートします。' />
-  </>
-);

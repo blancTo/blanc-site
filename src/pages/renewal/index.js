@@ -9,7 +9,76 @@ import Layout from '../../components/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faPen } from '@fortawesome/free-solid-svg-icons';
 
+const pagemeta = {
+  title: `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトルタグに入る情報
+  subtitle: `ホームページ作成やリニューアル`,//メインイメージ部分のテキスト
+  description: `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,//このページのディスクリプション
+  slug: `renewal`,//このページのslug
+};
+
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": `${siteurl}`,
+            "name": "ホーム"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": `${siteurl}/${pagemeta.slug}`,
+            "name": `${pagemeta.subtitle}`
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}/${pagemeta.slug}`,
+      "url": `${siteurl}/${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}/#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <body className='renewal' />  
+    <Seo title2={pagemeta.title} description={pagemeta.description} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const RenewalIndex = ({ data }) => {
+  
+
   const portfolios = data.allMicrocmsPortfolio.edges;
   // ランダムな20件のポートフォリオを選択
   const randomPortfolios = [...portfolios].sort(() => 0.5 - Math.random()).slice(0, 8);
@@ -18,24 +87,18 @@ const RenewalIndex = ({ data }) => {
       <Header />
 
       <div id='mainimage-sub'>
-        <h1>ホームページ作成やリニューアル</h1>
-        <p>Renewal</p>
+        <h1>{pagemeta.subtitle}</h1>
+        <p>{pagemeta.slug}</p>
       </div>
 
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <a href='https://www.blanc.to' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </a>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>ホームページ作成やリニューアル</span>
-            <meta itemProp='position' content='2' />
+            <a href='https://www.blanc.to/'>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
 
       <Layout slug='renewal'>
         <h2>ホームページ作成198,000円</h2>
@@ -356,15 +419,14 @@ const RenewalIndex = ({ data }) => {
 
 export default RenewalIndex;
 
-export const Head = () => (
-  <>
-    <body className='renewal' />
-    <Seo title='ホームページ作成やリニューアル' />
-  </>
-);
+
+
+
+
 
 export const query = graphql`
   query {
+    
     allMicrocmsPortfolio {
       edges {
         node {

@@ -8,29 +8,90 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faUser } from '@fortawesome/free-solid-svg-icons';
 
+const pagemeta = {
+  title: `ホームページ修正・更新 | 他社作成HPも対応 - 有限会社blanc`,//このページのタイトルタグに入る情報
+  subtitle: `ホームページ修正・更新`,//メインイメージ部分のテキスト
+  description: `ホームページの修正や更新に困っていませんか？blancはあなたのウェブサイトを最適化し、集客力を高めます。`,//このページのディスクリプション
+  slug: `hpkoushin`,//このページのslug
+};
+
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": `${siteurl}`,
+            "name": "ホーム"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": `${siteurl}/${pagemeta.slug}`,
+            "name": `${pagemeta.subtitle}`
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}/${pagemeta.slug}`,
+      "url": `${siteurl}/${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}/#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <body className={pagemeta.slug} />  
+    <Seo title2={pagemeta.title} description={pagemeta.description} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const HpkoushinIndex = () => {
   return (
     <>
       <Header />
 
       <div id='mainimage-sub'>
-        <h1>ホームページ修正・更新</h1>
+        <h1>{pagemeta.subtitle}</h1>
         <p>Web site updates</p>
       </div>
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <a href='https://www.blanc.to' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </a>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>ホームページ修正・更新</span>
-            <meta itemProp='position' content='2' />
+            <a href='https://www.blanc.to/'>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
 
       <Layout>
         <h2 className='mt0 center'>ホームページ修正・更新代行 ～他社制作サイトもOK～</h2>
@@ -267,96 +328,3 @@ const HpkoushinIndex = () => {
 };
 
 export default HpkoushinIndex;
-
-const jsonN = 'ホームページ修正・管理のご依頼は有限会社blanc',
-  jsonS = 'hpkoushin',
-  jsonD = '地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。';
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': `https://www.blanc.to/${jsonS}#website`,
-      url: `https://www.blanc.to/${jsonS}`,
-      name: `${jsonN}`,
-      description: `${jsonD}`,
-      inLanguage: 'ja',
-      publisher: {
-        '@id': `https://www.blanc.to/${jsonS}#organization`,
-      },
-    },
-    {
-      '@type': 'Organization',
-      '@id': 'https://www.blanc.to/#organization',
-      name: `${jsonN}`,
-      description: `${jsonD}`,
-      url: 'https://www.blanc.to/',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.blanc.to/images/logo.png',
-      },
-    },
-    {
-      '@type': 'ContactPoint',
-      telephone: '+81-0120-781-437',
-      contactType: 'customer service',
-    },
-    {
-      '@type': 'WebPage',
-      '@id': `https://www.blanc.to/${jsonS}#webpage`,
-      url: `https://www.blanc.to/${jsonS}`,
-      name: `${jsonN}`,
-      description: `${jsonD}`,
-      inLanguage: 'ja',
-      datePublished: '2022-10-04T01:06:53+09:00',
-      dateModified: '2023-03-18T23:31:17+09:00',
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.blanc.to/#breadcrumblist',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          '@id': 'https://www.blanc.to/#listItem',
-          position: 1,
-          item: {
-            '@type': 'WebPage',
-            '@id': 'https://www.blanc.to/',
-            name: `${jsonN}`,
-            description: `${jsonD}`,
-            url: 'https://www.blanc.to/',
-          },
-          nextItem: `https://www.blanc.to/${jsonS}#listItem`,
-        },
-        {
-          '@type': 'ListItem',
-          '@id': `https://www.blanc.to/${jsonS}#listItem`,
-          position: 2,
-          item: {
-            '@type': 'WebPage',
-            '@id': `https://www.blanc.to/${jsonS}`,
-            name: `ホームページ修正・更新｜${jsonN}`,
-            description: `ホームページ修正・更新｜${jsonD}`,
-            url: `https://www.blanc.to/${jsonS}`,
-          },
-          nextItem: `https://www.blanc.to/${jsonS}#listItem`,
-        },
-      ],
-    },
-    {
-      '@type': 'PostalAddress',
-      addressLocality: '下松市',
-      addressRegion: '山口県',
-      postalCode: '744-0013',
-      streetAddress: '栄町3丁目3-14',
-    },
-  ],
-};
-
-export const Head = () => (
-  <>
-    <Seo title2='ホームページ修正・更新 | 他社作成HPも対応 - 有限会社blanc' description='ホームページの修正や更新に困っていませんか？blancはあなたのウェブサイトを最適化し、集客力を高めます。' />
-    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
-  </>
-);
