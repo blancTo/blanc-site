@@ -10,7 +10,7 @@ const pagemeta = {
   slug: `company`,//このページのslug
 };
 
-const siteurl = 'https://www.blanc.to/';
+const siteurl = 'https://www.blanc.to';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -76,7 +76,7 @@ const company = () => {
       <Header />
 
       <div id='mainimage-sub'>
-        <h1>{pagemeta.title}</h1>
+        <h1>{pagemeta.subtitle}</h1>
         <p>Company</p>
       </div>
       <nav aria-label='Breadcrumb' id='breadcrumb'>
