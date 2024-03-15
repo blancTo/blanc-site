@@ -48,7 +48,7 @@ query {
       defaultTitle: title
       defaultKeyword: keyword
       defaultDescription: description
-      siteUrl: url
+      siteUrl: siteUrl
       defaultImage: image
     }
   }
