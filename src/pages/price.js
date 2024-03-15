@@ -4,28 +4,90 @@ import Seo from '../components/Seo';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
+const pagemeta = {
+  title: `ホームページの修正とメンテナンスに関する費用と月額保守料金｜有限会社blanc`,//このページのタイトルタグに入る情報
+  subtitle: `ホームページ修正・保守料金表`,//メインイメージ部分のテキスト
+  description: `ホームページ修正費用の詳細はこちら。ホームページの維持管理からSEO対策、ドメイン・サーバー管理まで、blancのホームページ修正費用とサービス内容を一覧でご案内。`,//このページのディスクリプション
+  slug: `price`,//このページのslug
+};
+
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": `${siteurl}`,
+            "name": "ホーム"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": `${siteurl}/${pagemeta.slug}`,
+            "name": `${pagemeta.subtitle}`
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}/${pagemeta.slug}`,
+      "url": `${siteurl}/${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}/#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <body className={pagemeta.slug} />  
+
+    <Seo title2={pagemeta.title} description={pagemeta.description} article={true} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const price = () => {
   return (
     <>
       <Header />
       <div id='mainimage-sub'>
-        <h1>ホームページ修正・保守料金表</h1>
+        <h1>{pagemeta.title}</h1>
         <p>Price</p>
       </div>
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <a href='https://www.blanc.to' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </a>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>ホームページ修正・保守料金表</span>
-            <meta itemProp='position' content='2' />
+            <a href='https://www.blanc.to/'>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
       <Layout>
         <h2>blancサポート月額料金表（税抜）</h2>
 
@@ -651,8 +713,4 @@ const price = () => {
 
 export default price;
 
-export const Head = () => (
-  <>
-    <Seo title2='ホームページの修正とメンテナンスに関する費用と月額保守料金｜有限会社blanc' description='ホームページ修正費用の詳細はこちら。ホームページの維持管理からSEO対策、ドメイン・サーバー管理まで、blancのホームページ修正費用とサービス内容を一覧でご案内。' />
-  </>
-);
+
