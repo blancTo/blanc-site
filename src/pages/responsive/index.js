@@ -37,15 +37,15 @@ const jsonLd = {
         {
           "@type": "ListItem",
           "position": 2,
-          "item": `${siteurl}${pagemeta.slug}`,
+          "item": `${siteurl}${pagemeta.slug}/`,
           "name": `${pagemeta.subtitle}`          
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": `${siteurl}${pagemeta.slug}`,
-      "url": `${siteurl}${pagemeta.slug}`,
+      "@id": `${siteurl}${pagemeta.slug}/`,
+      "url": `${siteurl}${pagemeta.slug}/`,
       "name": `${pagemeta.title}`,
       "description": `${pagemeta.description}`,
       "inLanguage": "ja",

@@ -33,7 +33,7 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@id": `${siteurl}${pagemeta.parentSlug}`,
+            "@id": `${siteurl}${pagemeta.parentSlug}/`,
             "name": `${pagemeta.parentSubtitle}`
           }
         },
@@ -41,7 +41,7 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": `${siteurl}${pagemeta.parentSlug}/${pagemeta.slug}`,
+            "@id": `${siteurl}${pagemeta.parentSlug}/${pagemeta.slug}/`,
             "name": `${pagemeta.subtitle}`
           }
         }
@@ -49,8 +49,8 @@ const jsonLd = {
     },
     {
       "@type": "WebPage",
-      "@id": `${siteurl}${pagemeta.slug}`,
-      "url": `${siteurl}${pagemeta.slug}`,
+      "@id": `${siteurl}${pagemeta.slug}/`,
+      "url": `${siteurl}${pagemeta.slug}/`,
       "name": `${pagemeta.title}`,
       "description": `${pagemeta.description}`,
       "inLanguage": "ja",
