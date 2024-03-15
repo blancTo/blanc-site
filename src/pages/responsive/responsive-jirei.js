@@ -6,15 +6,14 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 const pagemeta = {
   title: `スマホ化・レスポンシブ対応 | ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトルタグに入る情報
+  description: `スマホ化でアクセスアップ！ スマホ化の流れ 最近のスマートフォン普及にはめざましいものがあります。 今やパソコンと同じようにスマホでネットを見るのが普通になっています。 そのためホームページへのアクセスも業種によっては、スマホ経由の方が多い状況となっています。`,//このページのディスクリプション
   parentSubtitle:`スマホ化・レスポンシブ対応`,//親ページのページ名構造化パンくずのため
   subtitle: `スマホ対応・レスポンシブ化事例`,//メインイメージ部分のテキスト
-  description: `スマホ化でアクセスアップ！ スマホ化の流れ 最近のスマートフォン普及にはめざましいものがあります。 今やパソコンと同じようにスマホでネットを見るのが普通になっています。 そのためホームページへのアクセスも業種によっては、スマホ経由の方が多い状況となっています。`,//このページのディスクリプション
   parentSlug: `responsive`,//親ページのスラッグ構造化パンくずのため
-  slug: `responsive-jirei`,//このページのslug
-  
+  slug: `responsive-jirei`,//このページのslug  
 };
 
-const siteurl = 'https://www.blanc.to';
+const siteurl = 'https://www.blanc.to/';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -34,7 +33,7 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@id": `${siteurl}/${pagemeta.parentSlug}`,
+            "@id": `${siteurl}${pagemeta.parentSlug}`,
             "name": `${pagemeta.parentSubtitle}`
           }
         },
@@ -42,7 +41,7 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": `${siteurl}/${pagemeta.parentSlug}/${pagemeta.slug}`,
+            "@id": `${siteurl}${pagemeta.parentSlug}/${pagemeta.slug}`,
             "name": `${pagemeta.subtitle}`
           }
         }
@@ -50,8 +49,8 @@ const jsonLd = {
     },
     {
       "@type": "WebPage",
-      "@id": `${siteurl}/${pagemeta.slug}`,
-      "url": `${siteurl}/${pagemeta.slug}`,
+      "@id": `${siteurl}${pagemeta.slug}`,
+      "url": `${siteurl}${pagemeta.slug}`,
       "name": `${pagemeta.title}`,
       "description": `${pagemeta.description}`,
       "inLanguage": "ja",
@@ -60,7 +59,7 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": `${siteurl}/#website`,
+      "@id": `${siteurl}#website`,
       "url": `${siteurl}`,
       "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
       "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,

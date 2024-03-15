@@ -17,6 +17,43 @@ const pagemeta = {
   keyword: `ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ`,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":  "https://blanc.to/",
+          "name": "ホーム"          
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blanc.to/#website",
+      "url": "https://blanc.to/",
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": "https://blanc.to/"
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <Seo title2={pagemeta.title} description={pagemeta.description} keyword={pagemeta.keyword} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const index = ({ data }) => {
   const blogsPC = data.blogPC ? data.blogPC.edges : [];
   const blogsSmp = data.blogSmp ? data.blogSmp.edges : [];
@@ -168,44 +205,7 @@ const index = ({ data }) => {
   );
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@id": "https://blanc.to/",
-            "name": "ホーム"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://blanc.to/#website",
-      "url": "https://blanc.to",
-      "name": `${pagemeta.title}`,
-      "description": `${pagemeta.description}`,
-      "publisher": {
-        "@type": "Organization",
-        "name": "有限会社blanc",
-        "url": "https://blanc.to"
-      },
-      "inLanguage": "ja"
-    }
-  ]
-};
 
-export const Head = () => (
-  <>
-    <Seo title2={pagemeta.title} description={pagemeta.description} keyword={pagemeta.keyword} />
-    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
-  </>
-);
 
 export const query = graphql`
   query {

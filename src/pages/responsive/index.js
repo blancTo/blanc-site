@@ -15,8 +15,8 @@ import 'swiper/css/scrollbar';
 
 const pagemeta = {
   title: `スマホ化・レスポンシブ対応 | ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトルタグに入る情報
-  subtitle: `スマホ化・レスポンシブ対応`,//メインイメージ部分のテキスト
   description: `スマホ化でアクセスアップ！ スマホ化の流れ 最近のスマートフォン普及にはめざましいものがあります。 今やパソコンと同じようにスマホでネットを見るのが普通になっています。 そのためホームページへのアクセスも業種によっては、スマホ経由の方が多い状況となっています。`,//このページのディスクリプション
+  subtitle: `スマホ化・レスポンシブ対応`,//メインイメージ部分のテキスト  
   slug: `responsive`,//このページのslug
 };
 
@@ -31,25 +31,21 @@ const jsonLd = {
         {
           "@type": "ListItem",
           "position": 1,
-          "item": {
-            "@id": `${siteurl}`,
-            "name": "ホーム"
-          }
+          "item": `${siteurl}`,
+          "name": "ホーム"          
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "item": {
-            "@id": `${siteurl}/${pagemeta.slug}`,
-            "name": `${pagemeta.subtitle}`
-          }
+          "item": `${siteurl}${pagemeta.slug}`,
+          "name": `${pagemeta.subtitle}`          
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": `${siteurl}/${pagemeta.slug}`,
-      "url": `${siteurl}/${pagemeta.slug}`,
+      "@id": `${siteurl}${pagemeta.slug}`,
+      "url": `${siteurl}${pagemeta.slug}`,
       "name": `${pagemeta.title}`,
       "description": `${pagemeta.description}`,
       "inLanguage": "ja",
@@ -58,7 +54,7 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": `${siteurl}/#website`,
+      "@id": `${siteurl}#website`,
       "url": `${siteurl}`,
       "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
       "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,

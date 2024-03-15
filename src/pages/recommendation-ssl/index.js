@@ -9,30 +9,86 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faUser, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
+const pagemeta = {
+  title: `常時SSL設定 | ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトルタグに入る情報
+  subtitle: `常時SSL設定`,//メインイメージ部分のテキスト
+  description: `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,//このページのディスクリプション
+  slug: `recommendation-ssl`,//このページのslug
+};
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": `${siteurl}`,
+          "name": "ホーム"          
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": `${siteurl}${pagemeta.slug}`,
+          "name": `${pagemeta.subtitle}`          
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}${pagemeta.slug}`,
+      "url": `${siteurl}${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <Seo title='常時SSL設定' />
+    <Seo title2={pagemeta.title} description={pagemeta.description} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const RcommendationSsl = () => {
   return (
     <>
       <Header />
 
       <div id='mainimage-sub'>
-        <h1>常時SSL設定</h1>
+        <h1>{pagemeta.subtitle}</h1>
         <p>SSL</p>
       </div>
 
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <a href='https://www.blanc.to' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </a>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>常時SSL設定</span>
-            <meta itemProp='position' content='2' />
+            <a href={siteurl}>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
 
       <Layout>
         <h2>あなたのサイトには鍵がかかってますか？</h2>
@@ -335,8 +391,4 @@ const RcommendationSsl = () => {
 
 export default RcommendationSsl;
 
-export const Head = () => (
-  <>
-    <Seo title='常時SSL設定' />
-  </>
-);
+

@@ -18,8 +18,7 @@ module.exports = {
     keyword: "ホームページ修正,ホームページ管理,ホームページ更新,ホームページ作成,ホームページリニューアル,SEO対策,スマホ対応,レスポンシブ対応,構造化データマークアップ",
     description: "地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。",
     image: "/images/blanc_ogp.jpg",
-    url: "https://www.blanc.to",
-    siteUrl: "https://www.blanc.to",
+    url: "https://www.blanc.to",//スラッシュありだとOGP周りでエラーが出るため「なし」
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -125,13 +124,13 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         entryLimit: 50000,
-        resolveSiteUrl: () => 'https://www.blanc.to',
+        resolveSiteUrl: () => 'https://www.blanc.to/',
       },
     },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: "https://www.blanc.to", // サイトのベースURLを指定
+        host: "https://www.blanc.to/", // サイトのベースURLを指定
         sitemap: "https://www.blanc.to/sitemap-index.xml", // サイトマップのURLを指定
         policy: [{ userAgent: "*", allow: "/" }],
       },

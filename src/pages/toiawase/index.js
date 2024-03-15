@@ -3,28 +3,85 @@ import Seo from '../../components/Seo';
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 
+const pagemeta = {
+  title: `お問い合わせ | ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,//このページのタイトルタグに入る情報
+  description: `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,//このページのディスクリプション
+  subtitle: `お問い合わせ`,//メインイメージ部分のテキスト
+  slug: `toiawase`,//このページのslug
+};
+
+const siteurl = 'https://www.blanc.to/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": `${siteurl}`,
+          "name": "ホーム"          
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": `${siteurl}${pagemeta.slug}`,
+          "name": `${pagemeta.subtitle}`          
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteurl}${pagemeta.slug}`,
+      "url": `${siteurl}${pagemeta.slug}`,
+      "name": `${pagemeta.title}`,
+      "description": `${pagemeta.description}`,
+      "inLanguage": "ja",
+      "isPartOf": { "@id": `${siteurl}#website` },
+      "breadcrumb": { "@id": `${siteurl}#breadcrumblist` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteurl}#website`,
+      "url": `${siteurl}`,
+      "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
+      "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "有限会社blanc",
+        "url": `${siteurl}`
+      },
+      "inLanguage": "ja"
+    }
+  ]
+};
+
+export const Head = () => (
+  <>
+    <body className={pagemeta.slug} />  
+    <Seo title2={pagemeta.title} description={pagemeta.description} article={true} />
+    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
+  </>
+);
+
 const ToiawasePage = () => {
   return (
     <>
       <Header />
       <div id='mainimage-sub'>
-        <h1>お問い合わせ</h1>
+        <h1>{pagemeta.subtitle}</h1>
         <p>Contact</p>
       </div>
-      <div id='breadcrumb'>
-        <ul itemType='https://schema.org/BreadcrumbList'>
-          <li className='breadcrumb__item' itemProp='itemListElement' itemType='https://schema.org/ListItem'>
-            <a href='https://www.blanc.to' itemProp='item'>
-              <span itemProp='name'>ホーム</span>
-            </a>
-            <meta itemProp='position' content='1' />
-          </li>
+      <nav aria-label='Breadcrumb' id='breadcrumb'>
+        <ul>
           <li>
-            <span>お問い合わせ</span>
-            <meta itemProp='position' content='2' />
+            <a href='https://www.blanc.to/'>ホーム</a>
           </li>
+          <li>{pagemeta.subtitle}</li>
         </ul>
-      </div>
+      </nav>
       <Layout>
         <h2>お問い合わせフォーム</h2>
 
@@ -98,82 +155,3 @@ const ToiawasePage = () => {
 
 export default ToiawasePage;
 
-const jsonN = 'ホームページ修正・管理のご依頼は有限会社blanc',
-  jsonS = 'toiawase',
-  jsonD = '地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。';
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.blanc.to/#breadcrumblist',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          '@id': 'https://www.blanc.to/#listItem',
-          position: 1,
-          item: {
-            '@type': 'WebPage',
-            '@id': 'https://www.blanc.to/',
-            name: `${jsonN}`,
-            description: `${jsonD}`,
-            url: 'https://www.blanc.to/',
-          },
-          nextItem: `https://www.blanc.to/${jsonS}#listItem`,
-        },
-        {
-          '@type': 'ListItem',
-          '@id': `https://www.blanc.to/${jsonS}#listItem`,
-          position: 2,
-          item: {
-            '@type': 'WebPage',
-            '@id': `https://www.blanc.to/${jsonS}`,
-            name: `お遠い合わせ｜${jsonN}`,
-            description: `${jsonD}｜お問い合わせページ`,
-            url: `https://www.blanc.to/${jsonS}`,
-          },
-          nextItem: `https://www.blanc.to/${jsonS}#listItem`,
-        },
-      ],
-    },
-    {
-      '@type': 'Person',
-      '@id': `https://www.blanc.to/${jsonS}#person`,
-    },
-    {
-      '@type': 'WebPage',
-      '@id': `https://www.blanc.to/${jsonS}#webpage`,
-      url: `https://www.blanc.to/${jsonS}`,
-      name: `${jsonN}`,
-      description: `${jsonD}`,
-      inLanguage: 'ja',
-      isPartOf: {
-        '@id': `https://www.blanc.to/${jsonS}#website`,
-      },
-      breadcrumb: {
-        '@id': `https://www.blanc.to/${jsonS}#breadcrumblist`,
-      },
-      datePublished: '2022-10-04T01:06:53+09:00',
-      dateModified: '2023-03-18T23:31:17+09:00',
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `https://www.blanc.to/${jsonS}#website`,
-      url: `https://www.blanc.to/${jsonS}`,
-      name: `${jsonN}`,
-      description: `${jsonS}`,
-      inLanguage: 'ja',
-      publisher: {
-        '@id': `https://www.blanc.to/${jsonS}#person`,
-      },
-    },
-  ],
-};
-
-export const Head = () => (
-  <>
-    <Seo title='お問い合わせ' />
-    <script type='application/ld+json'>{JSON.stringify(jsonLd)}</script>
-  </>
-);

@@ -26,25 +26,21 @@ const jsonLd = {
         {
           "@type": "ListItem",
           "position": 1,
-          "item": {
-            "@id": `${siteurl}`,
-            "name": "ホーム"
-          }
+          "item": `${siteurl}`,
+          "name": "ホーム"          
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "item": {
-            "@id": `${siteurl}/${pagemeta.slug}`,
-            "name": `${pagemeta.subtitle}`
-          }
+          "item": `${siteurl}${pagemeta.slug}`,
+          "name": `${pagemeta.subtitle}`          
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": `${siteurl}/${pagemeta.slug}`,
-      "url": `${siteurl}/${pagemeta.slug}`,
+      "@id": `${siteurl}${pagemeta.slug}`,
+      "url": `${siteurl}${pagemeta.slug}`,
       "name": `${pagemeta.title}`,
       "description": `${pagemeta.description}`,
       "inLanguage": "ja",
@@ -53,7 +49,7 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": `${siteurl}/#website`,
+      "@id": `${siteurl}#website`,
       "url": `${siteurl}`,
       "name": `ホームページ修正・管理のご依頼は有限会社blancへ！他社作成のHPもご相談下さい。`,
       "description": `地域ナンバーワンのキーワードに特化したSEO対策の実績多数！集客可能なホームページ作成はもちろんホームページリニューアルやスマホ対応もお任せ下さい。`,
